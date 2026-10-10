@@ -180,6 +180,7 @@ public class CreateKeyActivity extends AppCompatActivity {
         btnSelectLogo.setOnClickListener(v -> logoPickerLauncher.launch("image/*"));
 
         btnGenKeystorePassword.setOnClickListener(v -> {
+            v.animate().rotationBy(360f).setDuration(350).start();
             String pass = SecurePasswordGenerator.generateDefault();
             etKeystorePassword.setText(pass);
             if (cbSamePassword.isChecked()) {
@@ -189,6 +190,7 @@ public class CreateKeyActivity extends AppCompatActivity {
         });
 
         btnGenKeyPassword.setOnClickListener(v -> {
+            v.animate().rotationBy(360f).setDuration(350).start();
             String pass = SecurePasswordGenerator.generateDefault();
             etKeyPassword.setText(pass);
             Toast.makeText(this, "Generated secure key password", Toast.LENGTH_SHORT).show();
@@ -205,12 +207,11 @@ public class CreateKeyActivity extends AppCompatActivity {
 
         btnToggleAdvanced.setOnClickListener(v -> {
             isAdvancedExpanded = !isAdvancedExpanded;
+            ivAdvancedArrow.animate().rotation(isAdvancedExpanded ? 180f : 0f).setDuration(250).start();
             if (isAdvancedExpanded) {
                 layoutAdvancedContent.setVisibility(View.VISIBLE);
-                ivAdvancedArrow.setImageResource(R.drawable.ic_expand_less);
             } else {
                 layoutAdvancedContent.setVisibility(View.GONE);
-                ivAdvancedArrow.setImageResource(R.drawable.ic_expand_more);
             }
         });
 

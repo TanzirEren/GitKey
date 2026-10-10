@@ -9,7 +9,10 @@
     app:cardElevation="0dp"
     app:strokeColor="?attr/colorCardStroke"
     app:strokeWidth="1dp"
-    app:cardBackgroundColor="?attr/colorCardBackground">
+    app:cardBackgroundColor="?attr/colorCardBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,29 +26,35 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <ImageView
-                android:id="@+id/ivProjectLogo"
+            <!-- Logo Squircle Frame -->
+            <FrameLayout
                 android:layout_width="44dp"
                 android:layout_height="44dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_gitkey_logo"
-                android:background="@drawable/bg_badge_accent"
-                android:contentDescription="@string/label_app_logo"
-                android:padding="4dp" />
+                android:background="@drawable/bg_icon_container">
+
+                <ImageView
+                    android:id="@+id/ivProjectLogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_gitkey_logo"
+                    android:padding="6dp"
+                    android:contentDescription="@string/label_app_logo" />
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="14dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tvProjectName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-black"
                     android:textColor="?attr/colorTextTitle"
                     tools:text="NovaPlayer" />
 
@@ -53,7 +62,9 @@
                     android:id="@+id/tvDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
+                    android:layout_marginTop="1dp"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif"
                     android:textColor="?attr/colorTextMuted"
                     tools:text="Created on Oct 9, 2026" />
             </LinearLayout>
@@ -68,6 +79,7 @@
                 android:contentDescription="@string/btn_delete_record" />
         </LinearLayout>
 
+        <!-- Metadata Badges Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,13 +91,13 @@
                 android:id="@+id/tvAliasBadge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_badge_accent"
+                android:background="@drawable/bg_badge_pill"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:textSize="11sp"
-                android:textStyle="bold"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-bold"
                 android:textColor="?attr/colorPrimary"
                 tools:text="alias: release_key" />
 
@@ -93,13 +105,14 @@
                 android:id="@+id/tvAlgorithmBadge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/bg_badge_accent"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/bg_badge_pill"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:textSize="11sp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
                 android:textColor="?attr/colorTextMuted"
                 tools:text="RSA 2048" />
 
@@ -112,38 +125,41 @@
                 android:id="@+id/tvFileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="11sp"
+                android:textSize="10sp"
+                android:fontFamily="monospace"
                 android:textColor="?attr/colorTextMuted"
                 tools:text="NovaPlayer.jks" />
         </LinearLayout>
 
+        <!-- Monospace Fingerprint Code Box -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/bg_code_box"
-            android:padding="8dp"
+            android:background="@drawable/bg_code_box_stitch"
+            android:padding="10dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:textStyle="bold"
+                android:textSize="9sp"
+                android:fontFamily="sans-serif-bold"
                 android:textColor="?attr/colorTextMuted"
-                android:text="SHA-256 FINGERPRINT" />
+                android:text="SHA-256 FINGERPRINT"
+                android:letterSpacing="0.05" />
 
             <TextView
                 android:id="@+id/tvSha256"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="3dp"
                 android:fontFamily="monospace"
-                android:textSize="11sp"
-                android:textColor="?attr/colorTextBody"
+                android:textSize="10sp"
+                android:textColor="?attr/colorCodeText"
                 android:singleLine="true"
                 android:ellipsize="middle"
-                tools:text="4A:21:8B:E3:..." />
+                tools:text="4A:21:8B:E3:FA:90:..." />
         </LinearLayout>
 
     </LinearLayout>

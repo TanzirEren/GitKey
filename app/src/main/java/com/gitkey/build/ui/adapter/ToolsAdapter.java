@@ -41,6 +41,9 @@ public class ToolsAdapter extends RecyclerView.Adapter<ToolsAdapter.ViewHolder> 
         holder.tvTitle.setText(item.getTitleRes());
         holder.tvDesc.setText(item.getDescriptionRes());
         holder.ivIcon.setImageResource(item.getIconRes());
+        try {
+            holder.ivIcon.setImageTintList(androidx.core.content.ContextCompat.getColorStateList(holder.itemView.getContext(), item.getColorRes()));
+        } catch (Exception ignored) {}
 
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) listener.onToolClick(item);
@@ -53,11 +56,13 @@ public class ToolsAdapter extends RecyclerView.Adapter<ToolsAdapter.ViewHolder> 
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+        View iconContainer;
         ImageView ivIcon;
         TextView tvTitle, tvDesc;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            iconContainer = itemView.findViewById(R.id.iconContainer);
             ivIcon = itemView.findViewById(R.id.ivToolIcon);
             tvTitle = itemView.findViewById(R.id.tvToolTitle);
             tvDesc = itemView.findViewById(R.id.tvToolDesc);

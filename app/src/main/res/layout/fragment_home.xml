@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:clipToPadding="false"
-    android:paddingBottom="24dp">
+    android:paddingBottom="36dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,21 +14,28 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Top Header with GitKey Abstract Logo -->
+        <!-- Top Stitch Header: Logo, Branding & Offline Status -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="20dp">
 
-            <ImageView
-                android:id="@+id/ivHeaderLogo"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
-                android:src="@drawable/ic_gitkey_logo"
-                android:contentDescription="@string/app_name" />
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_icon_container">
+
+                <ImageView
+                    android:id="@+id/ivHeaderLogo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_gitkey_logo"
+                    android:contentDescription="@string/app_name" />
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -41,33 +48,50 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:fontFamily="sans-serif-black"
-                    android:textColor="?attr/colorTextTitle" />
+                    android:textColor="?attr/colorTextTitle"
+                    android:letterSpacing="-0.02" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
                     android:text="@string/app_subtitle"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-medium"
                     android:textColor="?attr/colorTextMuted" />
             </LinearLayout>
 
-            <TextView
+            <!-- Status Pill: 100% Offline -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_badge_accent"
+                android:background="@drawable/bg_badge_pill"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:text="OFFLINE"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:textColor="?attr/colorPrimary" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/bg_dot_emerald"
+                    android:layout_marginEnd="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OFFLINE"
+                    android:textSize="10sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textColor="?attr/colorTextTitle" />
+            </LinearLayout>
         </LinearLayout>
 
-        <!-- Welcome Hero Card -->
+        <!-- Welcome Hero Stitch Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,26 +105,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="22dp">
+
+                <!-- Micro Tagline Badge -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_badge_pill"
+                    android:paddingStart="9dp"
+                    android:paddingEnd="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="ANDROID BUILD SIGNING • CI/CD"
+                    android:textSize="10sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textColor="?attr/colorPrimary" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
                     android:text="@string/home_welcome_title"
-                    android:textSize="20sp"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="?attr/colorTextTitle" />
+                    android:textSize="21sp"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="?attr/colorTextTitle"
+                    android:letterSpacing="-0.02" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:text="@string/home_welcome_desc"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
                     android:textColor="?attr/colorTextBody"
                     android:lineSpacingExtra="3dp" />
 
-                <!-- Badges Row -->
+                <!-- Capability Chips -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -110,27 +151,43 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_badge_accent"
+                        android:background="@drawable/bg_badge_pill"
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:paddingTop="4dp"
                         android:paddingBottom="4dp"
-                        android:text="@string/feature_badge_offline"
-                        android:textSize="11sp"
-                        android:textColor="?attr/colorPrimary" />
+                        android:text="PKCS12 / .JKS"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="?attr/colorTextMuted" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bg_badge_accent"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/bg_badge_pill"
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:paddingTop="4dp"
                         android:paddingBottom="4dp"
-                        android:text="@string/feature_badge_github"
-                        android:textSize="11sp"
+                        android:text="RSA 2048"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-bold"
                         android:textColor="?attr/colorTextMuted" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/bg_badge_pill"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="GITHUB ACTIONS"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="?attr/colorPrimary" />
                 </LinearLayout>
 
                 <!-- Prominent Create Key Button -->
@@ -140,24 +197,173 @@
                     android:layout_height="52dp"
                     android:layout_marginTop="20dp"
                     android:text="@string/btn_create_new_key"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-bold"
                     app:cornerRadius="14dp"
                     app:icon="@drawable/ic_key"
                     app:iconGravity="textStart"
                     app:iconTint="#FFFFFF"
+                    app:iconSize="18dp"
                     android:backgroundTint="?attr/colorPrimary"
                     android:textColor="#FFFFFF" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Quick 3-Step Workflow Card -->
+        <!-- Highlights & Guarantees Strip (Google Stitch Metric Trio) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="14dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="?attr/colorCardStroke"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="?attr/colorCardBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AIR-GAPPED"
+                        android:textSize="9sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="?attr/colorPrimary"
+                        android:letterSpacing="0.04" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="100% Offline"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="?attr/colorTextTitle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="On-device crypto"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif"
+                        android:textColor="?attr/colorTextMuted" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="?attr/colorCardStroke"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="?attr/colorCardBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SECURITY"
+                        android:textSize="9sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="@color/brand_emerald"
+                        android:letterSpacing="0.04" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="Zero Telemetry"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="?attr/colorTextTitle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="No passwords saved"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif"
+                        android:textColor="?attr/colorTextMuted" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="?attr/colorCardStroke"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="?attr/colorCardBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="COMPATIBLE"
+                        android:textSize="9sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="@color/brand_cyan"
+                        android:letterSpacing="0.04" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="Standard JKS"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="?attr/colorTextTitle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="Android Studio &amp; CI"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif"
+                        android:textColor="?attr/colorTextMuted" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Quick 3-Step Stitch Workflow Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:cardCornerRadius="16dp"
+            android:layout_marginTop="14dp"
+            app:cardCornerRadius="18dp"
             app:cardElevation="0dp"
             app:strokeColor="?attr/colorCardStroke"
             app:strokeWidth="1dp"
@@ -167,95 +373,149 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="18dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="How GitKey Works"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
+                    android:text="Automated Signing Workflow"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-bold"
                     android:textColor="?attr/colorTextTitle" />
 
                 <!-- Step 1 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="14dp"
                     android:gravity="center_vertical">
 
                     <TextView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:background="@drawable/bg_badge_accent"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/bg_badge_pill"
                         android:gravity="center"
                         android:text="1"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
+                        android:textSize="11sp"
+                        android:fontFamily="sans-serif-bold"
                         android:textColor="?attr/colorPrimary" />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Configure project name, alias, and secure passwords."
-                        android:textSize="13sp"
-                        android:textColor="?attr/colorTextBody" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Configure Project &amp; Alias"
+                            android:textSize="13sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorTextTitle" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Set alias, generate passwords, and specify certificate identity."
+                            android:textSize="12sp"
+                            android:textColor="?attr/colorTextMuted" />
+                    </LinearLayout>
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="?attr/colorDivider" />
 
                 <!-- Step 2 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:gravity="center_vertical">
 
                     <TextView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:background="@drawable/bg_badge_accent"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/bg_badge_pill"
                         android:gravity="center"
                         android:text="2"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
+                        android:textSize="11sp"
+                        android:fontFamily="sans-serif-bold"
                         android:textColor="?attr/colorPrimary" />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Generate real Android PKCS12 keystore locally on device."
-                        android:textSize="13sp"
-                        android:textColor="?attr/colorTextBody" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Local Cryptographic Build"
+                            android:textSize="13sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorTextTitle" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Generates private RSA key pair, self-signed X.509 cert, and keystore."
+                            android:textSize="12sp"
+                            android:textColor="?attr/colorTextMuted" />
+                    </LinearLayout>
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="?attr/colorDivider" />
 
                 <!-- Step 3 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:gravity="center_vertical">
 
                     <TextView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:background="@drawable/bg_badge_accent"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/bg_badge_pill"
                         android:gravity="center"
                         android:text="3"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
+                        android:textSize="11sp"
+                        android:fontFamily="sans-serif-bold"
                         android:textColor="?attr/colorPrimary" />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Copy KEYSTORE_BASE64 and secrets directly to GitHub."
-                        android:textSize="13sp"
-                        android:textColor="?attr/colorTextBody" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Deploy to GitHub Actions"
+                            android:textSize="13sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorTextTitle" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Copy KEYSTORE_BASE64 and secret parameters directly to repo."
+                            android:textSize="12sp"
+                            android:textColor="?attr/colorTextMuted" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
@@ -265,7 +525,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="22dp"
             android:gravity="center_vertical">
 
             <TextView
@@ -273,8 +533,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/home_recent_title"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-bold"
                 android:textColor="?attr/colorTextTitle" />
 
             <TextView
@@ -282,11 +542,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/home_view_all"
-                android:textSize="13sp"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
                 android:textColor="?attr/colorPrimary"
                 android:clickable="true"
                 android:focusable="true"
-                android:padding="4dp" />
+                android:padding="6dp" />
         </LinearLayout>
 
         <!-- Recent Projects List -->
@@ -294,46 +555,77 @@
             android:id="@+id/rvRecentProjects"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:nestedScrollingEnabled="false"
             tools:listitem="@layout/item_project_card" />
 
         <!-- Empty State View -->
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/layoutEmptyState"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/bg_card_rounded"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="28dp">
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorCardStroke"
+            app:strokeWidth="1dp"
+            app:cardBackgroundColor="?attr/colorCardBackground">
 
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/ic_gitkey_logo"
-                android:alpha="0.6"
-                android:contentDescription="@null" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="@string/home_empty_title"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="?attr/colorTextTitle" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:text="@string/home_empty_desc"
-                android:textSize="12sp"
-                android:textColor="?attr/colorTextMuted" />
-        </LinearLayout>
+                android:padding="32dp">
+
+                <FrameLayout
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_badge_pill">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_key"
+                        app:tint="?attr/colorTextMuted"
+                        android:contentDescription="@null" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/home_empty_title"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textColor="?attr/colorTextTitle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="@string/home_empty_desc"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="?attr/colorTextMuted"
+                    android:lineSpacingExtra="2dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEmptyCreateKey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/btn_create_new_key"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-bold"
+                    app:cornerRadius="10dp"
+                    app:icon="@drawable/ic_add"
+                    app:iconSize="14dp"
+                    style="@style/Widget.Material3.Button.TonalButton" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

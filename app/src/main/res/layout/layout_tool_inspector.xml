@@ -9,7 +9,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="18dp"
         app:cardElevation="0dp"
         app:strokeColor="?attr/colorCardStroke"
         app:strokeWidth="1dp"
@@ -19,29 +19,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="18dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Select Existing Keystore"
                 android:textSize="14sp"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-bold"
                 android:textColor="?attr/colorTextTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Safely read aliases, validity, and SHA fingerprints without exposing keys"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif"
+                android:textColor="?attr/colorTextMuted" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="14dp"
                 android:gravity="center_vertical">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSelectInspectorFile"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:text="Choose .jks / .p12"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-bold"
                     app:icon="@drawable/ic_download"
+                    app:iconSize="16dp"
                     app:cornerRadius="10dp"
                     style="@style/Widget.Material3.Button.TonalButton" />
 
@@ -50,9 +62,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="12dp"
                     android:text="No keystore selected"
                     android:textSize="12sp"
+                    android:fontFamily="sans-serif"
                     android:textColor="?attr/colorTextMuted"
                     android:singleLine="true"
                     android:ellipsize="middle" />
@@ -62,8 +75,12 @@
                 android:id="@+id/tilInspectorPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="14dp"
                 android:hint="Keystore Password (if encrypted)"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
                 app:passwordToggleEnabled="true"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
@@ -72,17 +89,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
+                    android:textSize="13sp"
                     android:textColor="?attr/colorTextTitle" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnInspectKeystore"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="18dp"
                 android:text="INSPECT KEYSTORE"
-                android:textStyle="bold"
-                app:cornerRadius="12dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-bold"
+                app:cornerRadius="14dp"
                 android:backgroundTint="?attr/colorPrimary"
                 android:textColor="#FFFFFF" />
 
@@ -95,7 +114,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="18dp"
         app:cardElevation="0dp"
         app:strokeColor="?attr/colorCardStroke"
         app:strokeWidth="1dp"
@@ -106,36 +125,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="18dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="KEYSTORE METADATA"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="?attr/colorPrimary" />
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="?attr/colorPrimary"
+                android:letterSpacing="0.05" />
 
             <TextView
                 android:id="@+id/tvInspectorOutput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/bg_code_box"
+                android:background="@drawable/bg_code_box_stitch"
                 android:padding="12dp"
                 android:fontFamily="monospace"
                 android:textSize="11sp"
-                android:textColor="?attr/colorTextBody"
+                android:textColor="?attr/colorCodeText"
                 tools:text="Format: PKCS12\nAlias: upload\n..." />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCopyInspection"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="14dp"
                 android:text="Copy Metadata"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-bold"
                 app:icon="@drawable/ic_copy"
-                app:cornerRadius="10dp"
+                app:iconSize="16dp"
+                app:cornerRadius="12dp"
                 style="@style/Widget.Material3.Button.TonalButton" />
 
         </LinearLayout>

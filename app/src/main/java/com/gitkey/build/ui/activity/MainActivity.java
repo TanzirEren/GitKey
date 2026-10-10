@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private int activeTab = 0; // 0: Home, 1: Keys, 2: Tools, 3: Settings
 
     private View tabHome, tabKeys, tabTools, tabSettings;
+    private View pillTabHome, pillTabKeys, pillTabTools, pillTabSettings;
     private ImageView ivTabHome, ivTabKeys, ivTabTools, ivTabSettings;
     private TextView tvTabHome, tvTabKeys, tvTabTools, tvTabSettings;
     private ExtendedFloatingActionButton fabCreateKey;
@@ -49,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
         tabKeys = findViewById(R.id.tabKeys);
         tabTools = findViewById(R.id.tabTools);
         tabSettings = findViewById(R.id.tabSettings);
+
+        pillTabHome = findViewById(R.id.pillTabHome);
+        pillTabKeys = findViewById(R.id.pillTabKeys);
+        pillTabTools = findViewById(R.id.pillTabTools);
+        pillTabSettings = findViewById(R.id.pillTabSettings);
 
         ivTabHome = findViewById(R.id.ivTabHome);
         ivTabKeys = findViewById(R.id.ivTabKeys);
@@ -115,16 +121,33 @@ public class MainActivity extends AppCompatActivity {
         int colorPrimary = primaryVal.data;
         int colorMuted = mutedVal.data;
 
-        setTabState(ivTabHome, tvTabHome, activeTab == 0, colorPrimary, colorMuted);
-        setTabState(ivTabKeys, tvTabKeys, activeTab == 1, colorPrimary, colorMuted);
-        setTabState(ivTabTools, tvTabTools, activeTab == 2, colorPrimary, colorMuted);
-        setTabState(ivTabSettings, tvTabSettings, activeTab == 3, colorPrimary, colorMuted);
+        setTabState(pillTabHome, ivTabHome, tvTabHome, activeTab == 0, colorPrimary, colorMuted);
+        setTabState(pillTabKeys, ivTabKeys, tvTabKeys, activeTab == 1, colorPrimary, colorMuted);
+        setTabState(pillTabTools, ivTabTools, tvTabTools, activeTab == 2, colorPrimary, colorMuted);
+        setTabState(pillTabSettings, ivTabSettings, tvTabSettings, activeTab == 3, colorPrimary, colorMuted);
     }
 
-    private void setTabState(ImageView iv, TextView tv, boolean isSelected, int activeColor, int inactiveColor) {
+    private void setTabState(View pill, ImageView iv, TextView tv, boolean isSelected, int activeColor, int inactiveColor) {
         int color = isSelected ? activeColor : inactiveColor;
         iv.setImageTintList(ColorStateList.valueOf(color));
         tv.setTextColor(color);
         tv.setTypeface(null, isSelected ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
+        if (pill != null) {
+            if (isSelected) {
+                pill.setBackgroundResource(R.drawable.bg_nav_pill_active);
+                pill.setScaleX(0.85f);
+                pill.setScaleY(0.85f);
+                pill.animate()
+                        .scaleX(1.0f)
+                        .scaleY(1.0f)
+                        .setDuration(220)
+                        .setInterpolator(new android.view.animation.OvershootInterpolator(2.0f))
+                        .start();
+            } else {
+                pill.setBackgroundResource(0);
+                pill.setScaleX(1.0f);
+                pill.setScaleY(1.0f);
+            }
+        }
     }
 }

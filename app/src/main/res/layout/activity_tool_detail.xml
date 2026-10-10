@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true"
         android:clipToPadding="false"
-        android:paddingBottom="40dp">
+        android:paddingBottom="44dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,20 +27,26 @@
                 android:gravity="center_vertical"
                 android:layout_marginTop="8dp">
 
-                <ImageButton
-                    android:id="@+id/btnToolBack"
+                <FrameLayout
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@drawable/ic_back"
-                    app:tint="?attr/colorTextTitle"
-                    android:contentDescription="Back" />
+                    android:background="@drawable/bg_badge_pill">
+
+                    <ImageButton
+                        android:id="@+id/btnToolBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_back"
+                        app:tint="?attr/colorTextTitle"
+                        android:contentDescription="Back" />
+                </FrameLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="14dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -50,13 +56,16 @@
                         android:textSize="20sp"
                         android:fontFamily="sans-serif-black"
                         android:textColor="?attr/colorTextTitle"
+                        android:letterSpacing="-0.02"
                         tools:text="SHA-256 Generator" />
 
                     <TextView
                         android:id="@+id/tvToolHeaderDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:textSize="12sp"
+                        android:fontFamily="sans-serif"
                         android:textColor="?attr/colorTextMuted"
                         tools:text="Compute SHA-256 cryptographic hash." />
                 </LinearLayout>
@@ -67,7 +76,7 @@
                 android:id="@+id/toolContentContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="20dp" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

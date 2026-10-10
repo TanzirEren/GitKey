@@ -4,7 +4,7 @@
         <!-- Brand Colors in Dark Mode -->
         <item name="colorPrimary">@color/brand_cyan</item>
         <item name="colorOnPrimary">#090D16</item>
-        <item name="colorPrimaryContainer">#1E293B</item>
+        <item name="colorPrimaryContainer">#162C46</item>
         <item name="colorOnPrimaryContainer">#E0F2FE</item>
 
         <item name="colorSecondary">#60A5FA</item>
@@ -21,15 +21,20 @@
         <item name="colorCardBackground">@color/card_bg_dark</item>
         <item name="colorCardStroke">@color/card_stroke_dark</item>
         <item name="colorCodeBlock">@color/code_block_bg_dark</item>
+        <item name="colorCodeText">@color/code_text_dark</item>
         <item name="colorNavGlass">@color/nav_glass_bg_dark</item>
         <item name="colorNavStroke">@color/nav_glass_stroke_dark</item>
         <item name="colorTextTitle">@color/text_title_dark</item>
         <item name="colorTextBody">@color/text_body_dark</item>
         <item name="colorTextMuted">@color/text_muted_dark</item>
+        <item name="colorPillBg">@color/pill_bg_dark</item>
+        <item name="colorPillStroke">@color/pill_stroke_dark</item>
+        <item name="colorIconContainer">@color/icon_container_dark</item>
+        <item name="colorDivider">@color/divider_dark</item>
 
         <!-- Status & Navigation Bars -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar">false</item>
     </style>

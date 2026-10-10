@@ -3,9 +3,14 @@
     <attr name="colorCardBackground" format="color" />
     <attr name="colorCardStroke" format="color" />
     <attr name="colorCodeBlock" format="color" />
+    <attr name="colorCodeText" format="color" />
     <attr name="colorNavGlass" format="color" />
     <attr name="colorNavStroke" format="color" />
     <attr name="colorTextTitle" format="color" />
     <attr name="colorTextBody" format="color" />
     <attr name="colorTextMuted" format="color" />
+    <attr name="colorPillBg" format="color" />
+    <attr name="colorPillStroke" format="color" />
+    <attr name="colorIconContainer" format="color" />
+    <attr name="colorDivider" format="color" />
 </resources>

@@ -92,6 +92,9 @@ public class KeystoreResultActivity extends AppCompatActivity {
         btnCopyKeyAlias = findViewById(R.id.btnCopyKeyAlias);
         btnCopyKeyPassword = findViewById(R.id.btnCopyKeyPassword);
 
+        MaterialButton btnCopySha256 = findViewById(R.id.btnCopySha256);
+        MaterialButton btnCopySha1 = findViewById(R.id.btnCopySha1);
+
         btnCopyAll = findViewById(R.id.btnCopyAll);
         btnExportFiles = findViewById(R.id.btnExportFiles);
         btnGithubGuide = findViewById(R.id.btnGithubGuide);
@@ -168,6 +171,22 @@ public class KeystoreResultActivity extends AppCompatActivity {
 
         btnCopyKeyPassword.setOnClickListener(v ->
                 ClipboardHelper.copy(this, "KEY_PASSWORD", secrets.getKeyPassword(), true));
+
+        MaterialButton btnCopySha256 = findViewById(R.id.btnCopySha256);
+        if (btnCopySha256 != null) {
+            btnCopySha256.setOnClickListener(v ->
+                    ClipboardHelper.copy(this, "SHA-256 Fingerprint", secrets.getSha256Fingerprint(), false));
+        }
+        tvFingerprintSha256.setOnClickListener(v ->
+                ClipboardHelper.copy(this, "SHA-256 Fingerprint", secrets.getSha256Fingerprint(), false));
+
+        MaterialButton btnCopySha1 = findViewById(R.id.btnCopySha1);
+        if (btnCopySha1 != null) {
+            btnCopySha1.setOnClickListener(v ->
+                    ClipboardHelper.copy(this, "SHA-1 Fingerprint", secrets.getSha1Fingerprint(), false));
+        }
+        tvFingerprintSha1.setOnClickListener(v ->
+                ClipboardHelper.copy(this, "SHA-1 Fingerprint", secrets.getSha1Fingerprint(), false));
 
         btnCopyAll.setOnClickListener(v -> {
             ClipboardHelper.copy(this, "All GitHub Secrets", secrets.getFormattedAllSecrets(), true);

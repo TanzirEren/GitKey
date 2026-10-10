@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true"
         android:clipToPadding="false"
-        android:paddingBottom="40dp">
+        android:paddingBottom="44dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,20 +27,26 @@
                 android:gravity="center_vertical"
                 android:layout_marginTop="8dp">
 
-                <ImageButton
-                    android:id="@+id/btnGuideBack"
+                <FrameLayout
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@drawable/ic_back"
-                    app:tint="?attr/colorTextTitle"
-                    android:contentDescription="Back" />
+                    android:background="@drawable/bg_badge_pill">
+
+                    <ImageButton
+                        android:id="@+id/btnGuideBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_back"
+                        app:tint="?attr/colorTextTitle"
+                        android:contentDescription="Back" />
+                </FrameLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="14dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -49,13 +55,16 @@
                         android:text="@string/guide_title"
                         android:textSize="20sp"
                         android:fontFamily="sans-serif-black"
-                        android:textColor="?attr/colorTextTitle" />
+                        android:textColor="?attr/colorTextTitle"
+                        android:letterSpacing="-0.02" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="How to configure CI/CD signing with GitKey"
                         android:textSize="12sp"
+                        android:fontFamily="sans-serif"
                         android:textColor="?attr/colorTextMuted" />
                 </LinearLayout>
             </LinearLayout>
@@ -64,8 +73,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="16dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="0dp"
                 app:strokeColor="?attr/colorCardStroke"
                 app:strokeWidth="1dp"
@@ -75,31 +84,54 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/guide_step1_title"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="?attr/colorTextTitle" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="@string/guide_step1_desc"
-                        android:textSize="13sp"
-                        android:textColor="?attr/colorTextBody" />
+                    android:padding="18dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/bg_code_box"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_badge_pill"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="01"
+                            android:textSize="10sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/guide_step1_title"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorTextTitle" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/guide_step1_desc"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif"
+                        android:textColor="?attr/colorTextBody"
+                        android:lineSpacingExtra="2dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_code_box_stitch"
                         android:orientation="vertical"
-                        android:padding="10dp">
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -116,8 +148,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="16dp"
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="0dp"
                 app:strokeColor="?attr/colorCardStroke"
                 app:strokeWidth="1dp"
@@ -127,37 +159,60 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_badge_pill"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="02"
+                            android:textSize="10sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/guide_step2_title"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorTextTitle" />
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/guide_step2_title"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="?attr/colorTextTitle" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginTop="8dp"
                         android:text="@string/guide_step2_desc"
                         android:textSize="13sp"
-                        android:textColor="?attr/colorTextBody" />
+                        android:fontFamily="sans-serif"
+                        android:textColor="?attr/colorTextBody"
+                        android:lineSpacingExtra="2dp" />
 
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/bg_code_box"
-                        android:padding="10dp">
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_code_box_stitch"
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
-                            android:textSize="12sp"
-                            android:textColor="?attr/colorTextBody"
+                            android:textSize="11sp"
+                            android:textColor="?attr/colorCodeText"
                             android:text="- name: Decode Keystore\n  run: echo &quot;${{ secrets.KEYSTORE_BASE64 }}&quot; | base64 --decode > app/release-key.jks" />
                     </HorizontalScrollView>
                 </LinearLayout>
@@ -167,8 +222,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="16dp"
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="0dp"
                 app:strokeColor="?attr/colorCardStroke"
                 app:strokeWidth="1dp"
@@ -178,37 +233,60 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_badge_pill"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="03"
+                            android:textSize="10sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/guide_step3_title"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorTextTitle" />
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/guide_step3_title"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="?attr/colorTextTitle" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginTop="8dp"
                         android:text="Configure signingConfigs in your app/build.gradle:"
                         android:textSize="13sp"
-                        android:textColor="?attr/colorTextBody" />
+                        android:fontFamily="sans-serif"
+                        android:textColor="?attr/colorTextBody"
+                        android:lineSpacingExtra="2dp" />
 
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/bg_code_box"
-                        android:padding="10dp">
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_code_box_stitch"
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
                             android:textSize="11sp"
-                            android:textColor="?attr/colorTextBody"
+                            android:textColor="?attr/colorCodeText"
                             android:text="signingConfigs {\n  create(&quot;release&quot;) {\n    storeFile = file(&quot;release-key.jks&quot;)\n    storePassword = System.getenv(&quot;SIGNING_KEYSTORE_PASSWORD&quot;)\n    keyAlias = System.getenv(&quot;SIGNING_KEY_ALIAS&quot;)\n    keyPassword = System.getenv(&quot;SIGNING_KEY_PASSWORD&quot;)\n  }\n}" />
                     </HorizontalScrollView>
                 </LinearLayout>
@@ -219,13 +297,14 @@
                 android:id="@+id/btnCopyWorkflowTemplate"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="22dp"
                 android:text="@string/btn_copy_workflow"
                 android:textSize="14sp"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-bold"
                 app:cornerRadius="14dp"
                 app:icon="@drawable/ic_copy"
                 app:iconTint="#FFFFFF"
+                app:iconSize="16dp"
                 android:backgroundTint="?attr/colorPrimary"
                 android:textColor="#FFFFFF" />
 

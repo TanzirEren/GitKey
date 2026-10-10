@@ -9,7 +9,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="18dp"
         app:cardElevation="0dp"
         app:strokeColor="?attr/colorCardStroke"
         app:strokeWidth="1dp"
@@ -19,21 +19,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="18dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="JSON Input"
                 android:textSize="14sp"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-bold"
                 android:textColor="?attr/colorTextTitle" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:hint="Paste raw JSON here"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxStrokeColor="?attr/colorPrimary"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -42,6 +47,7 @@
                     android:layout_height="wrap_content"
                     android:minLines="4"
                     android:gravity="top|start"
+                    android:textSize="13sp"
                     android:textColor="?attr/colorTextTitle" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -49,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="16dp">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnFormatJson"
@@ -57,8 +63,9 @@
                     android:layout_height="48dp"
                     android:layout_weight="1"
                     android:layout_marginEnd="6dp"
-                    android:text="BEAUTIFY (FORMAT)"
-                    android:textStyle="bold"
+                    android:text="BEAUTIFY"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif-bold"
                     app:cornerRadius="12dp"
                     android:backgroundTint="?attr/colorPrimary"
                     android:textColor="#FFFFFF" />
@@ -70,7 +77,8 @@
                     android:layout_weight="1"
                     android:layout_marginStart="6dp"
                     android:text="MINIFY"
-                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif-bold"
                     app:cornerRadius="12dp"
                     style="@style/Widget.Material3.Button.TonalButton" />
             </LinearLayout>
@@ -84,7 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="18dp"
         app:cardElevation="0dp"
         app:strokeColor="?attr/colorCardStroke"
         app:strokeWidth="1dp"
@@ -95,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="18dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,17 +116,20 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="FORMATTED JSON"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="?attr/colorPrimary" />
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textColor="?attr/colorPrimary"
+                    android:letterSpacing="0.05" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCopyJson"
                     android:layout_width="wrap_content"
-                    android:layout_height="36dp"
+                    android:layout_height="34dp"
                     android:text="Copy"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-bold"
                     app:icon="@drawable/ic_copy"
-                    app:iconSize="14dp"
+                    app:iconSize="13dp"
                     app:cornerRadius="8dp"
                     style="@style/Widget.Material3.Button.TonalButton" />
             </LinearLayout>
@@ -128,11 +139,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/bg_code_box"
+                android:background="@drawable/bg_code_box_stitch"
                 android:padding="12dp"
                 android:fontFamily="monospace"
                 android:textSize="11sp"
-                android:textColor="?attr/colorTextBody" />
+                android:textColor="?attr/colorCodeText" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

@@ -1,40 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Core Brand Colors -->
+    <!-- Google Stitch Brand & Accent Palette -->
     <color name="brand_blue">#2563EB</color>
+    <color name="brand_blue_tint">#EFF6FF</color>
     <color name="brand_cyan">#0EA5E9</color>
+    <color name="brand_cyan_tint">#F0F9FF</color>
     <color name="brand_indigo">#4F46E5</color>
+    <color name="brand_indigo_tint">#EEF2FF</color>
     <color name="brand_emerald">#10B981</color>
+    <color name="brand_emerald_tint">#ECFDF5</color>
     <color name="brand_amber">#F59E0B</color>
+    <color name="brand_amber_tint">#FFFBEB</color>
     <color name="brand_rose">#EF4444</color>
+    <color name="brand_rose_tint">#FEF2F2</color>
+    <color name="brand_purple">#8B5CF6</color>
+    <color name="brand_purple_tint">#F5F3FF</color>
 
-    <!-- Theme Neutral Light -->
-    <color name="bg_light">#F8FAFC</color>
+    <!-- Theme Neutral Light (Stitch Clean Porcelain) -->
+    <color name="bg_light">#FBFBFC</color>
     <color name="surface_light">#FFFFFF</color>
     <color name="card_bg_light">#FFFFFF</color>
-    <color name="card_stroke_light">#E2E8F0</color>
+    <color name="card_stroke_light">#E5E7EB</color>
     <color name="text_title_light">#0F172A</color>
     <color name="text_body_light">#334155</color>
     <color name="text_muted_light">#64748B</color>
-    <color name="code_block_bg_light">#F1F5F9</color>
+    <color name="code_block_bg_light">#F8FAFC</color>
+    <color name="code_text_light">#1E293B</color>
+    <color name="pill_bg_light">#F1F5F9</color>
+    <color name="pill_stroke_light">#E2E8F0</color>
+    <color name="icon_container_light">#F8FAFC</color>
+    <color name="divider_light">#EDF2F7</color>
     <color name="nav_glass_bg_light">#F2FFFFFF</color>
-    <color name="nav_glass_stroke_light">#CBD5E1</color>
+    <color name="nav_glass_stroke_light">#E2E8F0</color>
+    <color name="nav_pill_active_light">#EBF3FE</color>
 
-    <!-- Theme Neutral Dark -->
-    <color name="bg_dark">#090D16</color>
-    <color name="surface_dark">#0F172A</color>
-    <color name="card_bg_dark">#151F32</color>
-    <color name="card_stroke_dark">#22324D</color>
+    <!-- Theme Neutral Dark (Stitch Obsidian & Slate) -->
+    <color name="bg_dark">#0B0F19</color>
+    <color name="surface_dark">#111827</color>
+    <color name="card_bg_dark">#111827</color>
+    <color name="card_stroke_dark">#1E293B</color>
     <color name="text_title_dark">#F8FAFC</color>
     <color name="text_body_dark">#E2E8F0</color>
     <color name="text_muted_dark">#94A3B8</color>
-    <color name="code_block_bg_dark">#0D1524</color>
-    <color name="nav_glass_bg_dark">#F00F172A</color>
-    <color name="nav_glass_stroke_dark">#2B3B55</color>
+    <color name="code_block_bg_dark">#070B14</color>
+    <color name="code_text_dark">#F1F5F9</color>
+    <color name="pill_bg_dark">#162032</color>
+    <color name="pill_stroke_dark">#1E293B</color>
+    <color name="icon_container_dark">#162032</color>
+    <color name="divider_dark">#1E293B</color>
+    <color name="nav_glass_bg_dark">#F0111827</color>
+    <color name="nav_glass_stroke_dark">#1E293B</color>
+    <color name="nav_pill_active_dark">#1A2844</color>
 
-    <!-- Semantic & Accent Aliases -->
-    <color name="accent_teal">#14B8A6</color>
-    <color name="accent_purple">#8B5CF6</color>
-    <color name="ripple_light">#202563EB</color>
-    <color name="ripple_dark">#3038BDF8</color>
+    <!-- Interactive Ripples -->
+    <color name="ripple_light">#1A2563EB</color>
+    <color name="ripple_dark">#2538BDF8</color>
 </resources>

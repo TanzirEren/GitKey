@@ -7,22 +7,24 @@
     android:orientation="vertical"
     android:padding="20dp">
 
-    <!-- Header -->
+    <!-- Stitch Header -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/keys_title"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:fontFamily="sans-serif-black"
         android:textColor="?attr/colorTextTitle"
-        android:layout_marginTop="12dp" />
+        android:letterSpacing="-0.02"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:text="@string/keys_subtitle"
-        android:textSize="13sp"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif"
         android:textColor="?attr/colorTextMuted" />
 
     <!-- Security Info Card -->
@@ -43,21 +45,30 @@
             android:padding="12dp"
             android:gravity="center_vertical">
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_shield"
-                app:tint="?attr/colorPrimary"
-                android:contentDescription="@null" />
+            <FrameLayout
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_badge_pill">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_shield"
+                    app:tint="?attr/colorPrimary"
+                    android:contentDescription="@null" />
+            </FrameLayout>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="12dp"
                 android:text="@string/keys_security_notice"
                 android:textSize="11sp"
-                android:textColor="?attr/colorTextBody" />
+                android:fontFamily="sans-serif"
+                android:textColor="?attr/colorTextBody"
+                android:lineSpacingExtra="2dp" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -71,40 +82,71 @@
         tools:listitem="@layout/item_project_card" />
 
     <!-- Empty State -->
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/layoutEmptyKeys"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="0dp"
+        app:strokeColor="?attr/colorCardStroke"
+        app:strokeWidth="1dp"
+        app:cardBackgroundColor="?attr/colorCardBackground"
         android:visibility="gone">
 
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:src="@drawable/ic_key"
-            app:tint="?attr/colorTextMuted"
-            android:alpha="0.4"
-            android:contentDescription="@null" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/keys_empty_title"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="?attr/colorTextTitle" />
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="36dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/keys_empty_desc"
-            android:textSize="13sp"
-            android:textColor="?attr/colorTextMuted"
-            android:gravity="center" />
-    </LinearLayout>
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_badge_pill">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_key"
+                    app:tint="?attr/colorTextMuted"
+                    android:contentDescription="@null" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/keys_empty_title"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="?attr/colorTextTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/keys_empty_desc"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif"
+                android:textColor="?attr/colorTextMuted"
+                android:gravity="center" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEmptyCreateKeyFromKeys"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/btn_create_new_key"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/ic_add"
+                app:iconSize="14dp"
+                style="@style/Widget.Material3.Button.TonalButton" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

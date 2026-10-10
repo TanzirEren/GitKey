@@ -4,8 +4,8 @@
         <!-- Brand Colors -->
         <item name="colorPrimary">@color/brand_blue</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorPrimaryContainer">#DBEAFE</item>
-        <item name="colorOnPrimaryContainer">#1E3A8A</item>
+        <item name="colorPrimaryContainer">@color/brand_blue_tint</item>
+        <item name="colorOnPrimaryContainer">#1D4ED8</item>
 
         <item name="colorSecondary">@color/brand_cyan</item>
         <item name="colorOnSecondary">#FFFFFF</item>
@@ -21,15 +21,20 @@
         <item name="colorCardBackground">@color/card_bg_light</item>
         <item name="colorCardStroke">@color/card_stroke_light</item>
         <item name="colorCodeBlock">@color/code_block_bg_light</item>
+        <item name="colorCodeText">@color/code_text_light</item>
         <item name="colorNavGlass">@color/nav_glass_bg_light</item>
         <item name="colorNavStroke">@color/nav_glass_stroke_light</item>
         <item name="colorTextTitle">@color/text_title_light</item>
         <item name="colorTextBody">@color/text_body_light</item>
         <item name="colorTextMuted">@color/text_muted_light</item>
+        <item name="colorPillBg">@color/pill_bg_light</item>
+        <item name="colorPillStroke">@color/pill_stroke_light</item>
+        <item name="colorIconContainer">@color/icon_container_light</item>
+        <item name="colorDivider">@color/divider_light</item>
 
         <!-- Status & Navigation Bars -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/bg_light</item>
+        <item name="android:navigationBarColor">@color/bg_light</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
     </style>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
-    android:paddingBottom="24dp">
+    android:paddingBottom="28dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,34 +18,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings_title"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:fontFamily="sans-serif-black"
             android:textColor="?attr/colorTextTitle"
-            android:layout_marginTop="12dp" />
+            android:letterSpacing="-0.02"
+            android:layout_marginTop="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:text="@string/settings_subtitle"
-            android:textSize="13sp"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif"
             android:textColor="?attr/colorTextMuted" />
 
         <!-- Section 1: Appearance -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/pref_appearance_title"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:textColor="?attr/colorPrimary" />
+            android:layout_marginTop="22dp"
+            android:text="APPEARANCE"
+            android:textSize="11sp"
+            android:fontFamily="sans-serif-bold"
+            android:textColor="?attr/colorPrimary"
+            android:letterSpacing="0.05" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardCornerRadius="16dp"
+            app:cardCornerRadius="18dp"
             app:cardElevation="0dp"
             app:strokeColor="?attr/colorCardStroke"
             app:strokeWidth="1dp"
@@ -55,22 +58,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="18dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pref_theme_title"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-bold"
                     android:textColor="?attr/colorTextTitle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Choose how GitKey looks on your device"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextMuted" />
 
                 <!-- Radio Group for Theme Options -->
                 <RadioGroup
                     android:id="@+id/rgTheme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="12dp">
 
                     <RadioButton
                         android:id="@+id/rbThemeSystem"
@@ -78,7 +89,11 @@
                         android:layout_height="wrap_content"
                         android:text="@string/theme_system"
                         android:textColor="?attr/colorTextBody"
-                        android:textSize="14sp" />
+                        app:buttonTint="?attr/colorPrimary"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp" />
 
                     <RadioButton
                         android:id="@+id/rbThemeLight"
@@ -86,7 +101,11 @@
                         android:layout_height="wrap_content"
                         android:text="@string/theme_light"
                         android:textColor="?attr/colorTextBody"
-                        android:textSize="14sp" />
+                        app:buttonTint="?attr/colorPrimary"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp" />
 
                     <RadioButton
                         android:id="@+id/rbThemeDark"
@@ -94,7 +113,11 @@
                         android:layout_height="wrap_content"
                         android:text="@string/theme_dark"
                         android:textColor="?attr/colorTextBody"
-                        android:textSize="14sp" />
+                        app:buttonTint="?attr/colorPrimary"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp" />
                 </RadioGroup>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -103,17 +126,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/pref_security_title"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:textColor="?attr/colorPrimary" />
+            android:layout_marginTop="22dp"
+            android:text="SECURITY &amp; PRIVACY"
+            android:textSize="11sp"
+            android:fontFamily="sans-serif-bold"
+            android:textColor="?attr/colorPrimary"
+            android:letterSpacing="0.05" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardCornerRadius="16dp"
+            app:cardCornerRadius="18dp"
             app:cardElevation="0dp"
             app:strokeColor="?attr/colorCardStroke"
             app:strokeWidth="1dp"
@@ -123,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="18dp">
 
                 <!-- Switch 1: Confirm before export -->
                 <LinearLayout
@@ -142,13 +166,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/pref_confirm_export_title"
-                            android:textSize="15sp"
-                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold"
                             android:textColor="?attr/colorTextTitle" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:text="@string/pref_confirm_export_desc"
                             android:textSize="12sp"
                             android:textColor="?attr/colorTextMuted" />
@@ -164,9 +189,9 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:background="?attr/colorCardStroke" />
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="14dp"
+                    android:background="?attr/colorDivider" />
 
                 <!-- Switch 2: Hide secrets by default -->
                 <LinearLayout
@@ -185,13 +210,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/pref_hide_secrets_title"
-                            android:textSize="15sp"
-                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold"
                             android:textColor="?attr/colorTextTitle" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:text="@string/pref_hide_secrets_desc"
                             android:textSize="12sp"
                             android:textColor="?attr/colorTextMuted" />
@@ -207,21 +233,22 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Section 3: Storage & Privacy -->
+        <!-- Section 3: Storage & Data -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/pref_storage_title"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:textColor="?attr/colorPrimary" />
+            android:layout_marginTop="22dp"
+            android:text="DATA &amp; HISTORY"
+            android:textSize="11sp"
+            android:fontFamily="sans-serif-bold"
+            android:textColor="?attr/colorPrimary"
+            android:letterSpacing="0.05" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardCornerRadius="16dp"
+            app:cardCornerRadius="18dp"
             app:cardElevation="0dp"
             app:strokeColor="?attr/colorCardStroke"
             app:strokeWidth="1dp"
@@ -231,7 +258,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="18dp">
 
                 <LinearLayout
                     android:id="@+id/layoutClearHistory"
@@ -253,24 +280,32 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/pref_clear_history_title"
-                            android:textSize="15sp"
-                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold"
                             android:textColor="?attr/colorTextTitle" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:text="@string/pref_clear_history_desc"
                             android:textSize="12sp"
                             android:textColor="?attr/colorTextMuted" />
                     </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_delete"
-                        app:tint="@color/brand_rose"
-                        android:contentDescription="@null" />
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_badge_pill">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_delete"
+                            app:tint="@color/brand_rose"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
                 </LinearLayout>
 
             </LinearLayout>
@@ -280,17 +315,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/pref_about_title"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:textColor="?attr/colorPrimary" />
+            android:layout_marginTop="22dp"
+            android:text="ABOUT"
+            android:textSize="11sp"
+            android:fontFamily="sans-serif-bold"
+            android:textColor="?attr/colorPrimary"
+            android:letterSpacing="0.05" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardCornerRadius="16dp"
+            app:cardCornerRadius="18dp"
             app:cardElevation="0dp"
             app:strokeColor="?attr/colorCardStroke"
             app:strokeWidth="1dp"
@@ -300,14 +336,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp"
+                android:padding="22dp"
                 android:gravity="center_horizontal">
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:src="@drawable/ic_gitkey_logo"
-                    android:contentDescription="@null" />
+                <FrameLayout
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_icon_container">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_gitkey_logo"
+                        android:contentDescription="@null" />
+                </FrameLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -316,14 +359,15 @@
                     android:text="@string/app_name"
                     android:textSize="18sp"
                     android:fontFamily="sans-serif-black"
-                    android:textColor="?attr/colorTextTitle" />
+                    android:textColor="?attr/colorTextTitle"
+                    android:letterSpacing="-0.02" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/app_tagline"
                     android:textSize="12sp"
-                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-bold"
                     android:textColor="?attr/colorPrimary" />
 
                 <TextView
@@ -331,24 +375,28 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/app_version"
-                    android:textSize="12sp"
+                    android:textSize="11sp"
+                    android:fontFamily="monospace"
                     android:textColor="?attr/colorTextMuted" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="14dp"
                     android:gravity="center"
                     android:text="@string/about_developer"
-                    android:textSize="13sp"
-                    android:textColor="?attr/colorTextBody" />
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="?attr/colorTextBody"
+                    android:lineSpacingExtra="2dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/about_license"
                     android:textSize="11sp"
+                    android:fontFamily="sans-serif-bold"
                     android:textColor="?attr/colorTextMuted" />
 
             </LinearLayout>

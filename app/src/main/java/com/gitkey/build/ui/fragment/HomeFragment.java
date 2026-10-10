@@ -44,6 +44,7 @@ public class HomeFragment extends Fragment implements ProjectsAdapter.OnProjectA
         repository = new ProjectRepository(requireContext());
 
         MaterialButton btnCreateKey = view.findViewById(R.id.btnHomeCreateKey);
+        MaterialButton btnEmptyCreateKey = view.findViewById(R.id.btnEmptyCreateKey);
         TextView tvViewAll = view.findViewById(R.id.tvViewAll);
         rvRecentProjects = view.findViewById(R.id.rvRecentProjects);
         layoutEmptyState = view.findViewById(R.id.layoutEmptyState);
@@ -52,10 +53,14 @@ public class HomeFragment extends Fragment implements ProjectsAdapter.OnProjectA
         adapter = new ProjectsAdapter(requireContext(), this);
         rvRecentProjects.setAdapter(adapter);
 
-        btnCreateKey.setOnClickListener(v -> {
+        View.OnClickListener createKeyClick = v -> {
             Intent intent = new Intent(requireActivity(), CreateKeyActivity.class);
             startActivity(intent);
-        });
+        };
+        btnCreateKey.setOnClickListener(createKeyClick);
+        if (btnEmptyCreateKey != null) {
+            btnEmptyCreateKey.setOnClickListener(createKeyClick);
+        }
 
         tvViewAll.setOnClickListener(v -> {
             if (getActivity() instanceof MainActivity) {

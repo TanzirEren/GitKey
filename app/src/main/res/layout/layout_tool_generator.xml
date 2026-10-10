@@ -9,7 +9,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="18dp"
         app:cardElevation="0dp"
         app:strokeColor="?attr/colorCardStroke"
         app:strokeWidth="1dp"
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="18dp">
 
             <TextView
                 android:id="@+id/tvGenOptionTitle"
@@ -27,15 +27,19 @@
                 android:layout_height="wrap_content"
                 android:text="Options"
                 android:textSize="14sp"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-bold"
                 android:textColor="?attr/colorTextTitle" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilGenLength"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:hint="Length / Quantity"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -44,18 +48,21 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:text="16"
+                    android:textSize="13sp"
                     android:textColor="?attr/colorTextTitle" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGenerateValue"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="18dp"
                 android:text="GENERATE NEW"
-                android:textStyle="bold"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-bold"
                 app:icon="@drawable/ic_refresh"
-                app:cornerRadius="12dp"
+                app:iconSize="18dp"
+                app:cornerRadius="14dp"
                 android:backgroundTint="?attr/colorPrimary"
                 android:textColor="#FFFFFF" />
 
@@ -68,7 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="18dp"
         app:cardElevation="0dp"
         app:strokeColor="?attr/colorCardStroke"
         app:strokeWidth="1dp"
@@ -78,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="18dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -91,17 +98,20 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="GENERATED VALUE"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="?attr/colorPrimary" />
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textColor="?attr/colorPrimary"
+                    android:letterSpacing="0.05" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCopyGenValue"
                     android:layout_width="wrap_content"
-                    android:layout_height="36dp"
+                    android:layout_height="34dp"
                     android:text="Copy"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-bold"
                     app:icon="@drawable/ic_copy"
-                    app:iconSize="14dp"
+                    app:iconSize="13dp"
                     app:cornerRadius="8dp"
                     style="@style/Widget.Material3.Button.TonalButton" />
             </LinearLayout>
@@ -111,11 +121,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/bg_code_box"
+                android:background="@drawable/bg_code_box_stitch"
                 android:padding="12dp"
                 android:fontFamily="monospace"
                 android:textSize="13sp"
-                android:textColor="?attr/colorTextBody"
+                android:textColor="?attr/colorCodeText"
                 tools:text="k8#mP$91bQ_z!2xR" />
 
         </LinearLayout>

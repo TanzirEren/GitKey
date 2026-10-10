@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true"
         android:clipToPadding="false"
-        android:paddingBottom="40dp">
+        android:paddingBottom="44dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Top App Bar Navigation -->
+            <!-- Top Header Navigation -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,20 +27,26 @@
                 android:gravity="center_vertical"
                 android:layout_marginTop="8dp">
 
-                <ImageButton
-                    android:id="@+id/btnBack"
+                <FrameLayout
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@drawable/ic_back"
-                    app:tint="?attr/colorTextTitle"
-                    android:contentDescription="Back" />
+                    android:background="@drawable/bg_badge_pill">
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_back"
+                        app:tint="?attr/colorTextTitle"
+                        android:contentDescription="Back" />
+                </FrameLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="14dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -49,13 +55,16 @@
                         android:text="@string/create_key_title"
                         android:textSize="20sp"
                         android:fontFamily="sans-serif-black"
-                        android:textColor="?attr/colorTextTitle" />
+                        android:textColor="?attr/colorTextTitle"
+                        android:letterSpacing="-0.02" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/create_key_subtitle"
                         android:textSize="12sp"
+                        android:fontFamily="sans-serif"
                         android:textColor="?attr/colorTextMuted" />
                 </LinearLayout>
 
@@ -66,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="16dp"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="0dp"
                 app:strokeColor="?attr/colorCardStroke"
                 app:strokeWidth="1dp"
@@ -76,23 +85,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="18dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/label_project_info"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="?attr/colorTextTitle" />
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_badge_pill"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="01"
+                            android:textSize="10sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/label_project_info"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorTextTitle" />
+                    </LinearLayout>
 
                     <!-- Project Name Input -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/tilProjectName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="14dp"
                         android:hint="@string/label_project_name"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
                         app:boxStrokeColor="?attr/colorPrimary"
                         app:hintTextColor="?attr/colorPrimary"
                         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
@@ -103,34 +137,53 @@
                             android:layout_height="wrap_content"
                             android:inputType="textCapWords"
                             android:maxLines="1"
+                            android:textSize="14sp"
                             android:textColor="?attr/colorTextTitle" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- Default Keystore Filename (Auto-updated) -->
-                    <TextView
-                        android:id="@+id/tvKeystoreFileName"
+                    <!-- Default Keystore Filename Chip -->
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:textSize="12sp"
-                        android:fontFamily="monospace"
-                        android:textColor="?attr/colorPrimary"
-                        tools:text="Default file: MyApp-release.jks" />
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_badge_pill"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="6dp"
+                            android:layout_height="6dp"
+                            android:background="@drawable/bg_dot_emerald"
+                            android:layout_marginEnd="6dp" />
+
+                        <TextView
+                            android:id="@+id/tvKeystoreFileName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="11sp"
+                            android:fontFamily="monospace"
+                            android:textColor="?attr/colorPrimary"
+                            tools:text="Default file: MyApp-release.jks" />
+                    </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
-                        android:background="?attr/colorCardStroke" />
+                        android:background="?attr/colorDivider" />
 
                     <!-- App Logo Section -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/label_app_logo"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-bold"
                         android:textColor="?attr/colorTextTitle" />
 
                     <LinearLayout
@@ -166,11 +219,13 @@
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btnSelectLogo"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="40dp"
                                 android:text="@string/btn_choose_logo"
-                                android:textSize="13sp"
+                                android:textSize="12sp"
+                                android:fontFamily="sans-serif-bold"
                                 app:cornerRadius="10dp"
                                 app:icon="@drawable/ic_image"
+                                app:iconSize="16dp"
                                 style="@style/Widget.Material3.Button.TonalButton" />
 
                             <TextView
@@ -179,6 +234,7 @@
                                 android:layout_marginTop="4dp"
                                 android:text="@string/logo_privacy_note"
                                 android:textSize="11sp"
+                                android:fontFamily="sans-serif"
                                 android:textColor="?attr/colorTextMuted" />
                         </LinearLayout>
 
@@ -192,7 +248,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="16dp"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="0dp"
                 app:strokeColor="?attr/colorCardStroke"
                 app:strokeWidth="1dp"
@@ -202,23 +258,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="18dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/section_keystore_config"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="?attr/colorTextTitle" />
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_badge_pill"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="02"
+                            android:textSize="10sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/section_keystore_config"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorTextTitle" />
+                    </LinearLayout>
 
                     <!-- Key Alias -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/tilKeyAlias"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="14dp"
                         android:hint="@string/label_key_alias"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
                         app:boxStrokeColor="?attr/colorPrimary"
                         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
@@ -228,6 +309,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="text"
                             android:maxLines="1"
+                            android:textSize="14sp"
                             android:textColor="?attr/colorTextTitle" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -245,6 +327,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:hint="@string/label_keystore_password"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
                             app:passwordToggleEnabled="true"
                             style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
@@ -253,17 +339,19 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="textPassword"
+                                android:textSize="14sp"
                                 android:textColor="?attr/colorTextTitle" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnGenKeystorePassword"
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
+                            android:layout_width="48dp"
+                            android:layout_height="52dp"
                             android:layout_marginStart="8dp"
                             android:padding="0dp"
                             app:icon="@drawable/ic_refresh"
                             app:iconGravity="textStart"
+                            app:iconSize="20dp"
                             app:iconPadding="0dp"
                             app:cornerRadius="12dp"
                             android:tooltipText="@string/btn_generate_password"
@@ -275,13 +363,14 @@
                         android:id="@+id/cbSamePassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="10dp"
                         android:checked="true"
                         android:text="@string/check_same_password"
                         android:textColor="?attr/colorTextBody"
+                        android:fontFamily="sans-serif-medium"
                         android:textSize="13sp" />
 
-                    <!-- Key Password (editable if checkbox unchecked) -->
+                    <!-- Key Password Container -->
                     <LinearLayout
                         android:id="@+id/layoutKeyPasswordContainer"
                         android:layout_width="match_parent"
@@ -297,6 +386,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:hint="@string/label_key_password"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
                             app:passwordToggleEnabled="true"
                             style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
@@ -305,17 +398,19 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="textPassword"
+                                android:textSize="14sp"
                                 android:textColor="?attr/colorTextTitle" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnGenKeyPassword"
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
+                            android:layout_width="48dp"
+                            android:layout_height="52dp"
                             android:layout_marginStart="8dp"
                             android:padding="0dp"
                             app:icon="@drawable/ic_refresh"
                             app:iconGravity="textStart"
+                            app:iconSize="20dp"
                             app:iconPadding="0dp"
                             app:cornerRadius="12dp"
                             android:tooltipText="@string/btn_generate_password"
@@ -330,7 +425,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="16dp"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="0dp"
                 app:strokeColor="?attr/colorCardStroke"
                 app:strokeWidth="1dp"
@@ -348,23 +443,37 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:padding="16dp"
+                        android:padding="18dp"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?attr/selectableItemBackground">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_badge_pill"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:text="03"
+                            android:textSize="10sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="?attr/colorPrimary" />
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:layout_marginStart="10dp"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/section_advanced_options"
-                                android:textSize="15sp"
-                                android:textStyle="bold"
+                                android:textSize="14sp"
+                                android:fontFamily="sans-serif-bold"
                                 android:textColor="?attr/colorTextTitle" />
 
                             <TextView
@@ -373,13 +482,14 @@
                                 android:layout_marginTop="2dp"
                                 android:text="@string/advanced_subtitle"
                                 android:textSize="11sp"
+                                android:fontFamily="sans-serif"
                                 android:textColor="?attr/colorTextMuted" />
                         </LinearLayout>
 
                         <ImageView
                             android:id="@+id/ivAdvancedArrow"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:src="@drawable/ic_expand_more"
                             app:tint="?attr/colorTextMuted"
                             android:contentDescription="Expand" />
@@ -391,16 +501,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp"
-                        android:paddingBottom="16dp"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp"
+                        android:paddingBottom="18dp"
                         android:visibility="gone">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginBottom="12dp"
-                            android:background="?attr/colorCardStroke" />
+                            android:layout_marginBottom="14dp"
+                            android:background="?attr/colorDivider" />
 
                         <!-- Algorithm & Key Size -->
                         <LinearLayout
@@ -414,6 +524,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:hint="@string/label_algorithm"
+                                app:boxCornerRadiusTopStart="12dp"
+                                app:boxCornerRadiusTopEnd="12dp"
+                                app:boxCornerRadiusBottomStart="12dp"
+                                app:boxCornerRadiusBottomEnd="12dp"
                                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                                 <com.google.android.material.textfield.TextInputEditText
@@ -422,6 +536,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="RSA"
                                     android:enabled="false"
+                                    android:textSize="13sp"
                                     android:textColor="?attr/colorTextTitle" />
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -432,6 +547,10 @@
                                 android:layout_weight="1"
                                 android:layout_marginStart="12dp"
                                 android:hint="@string/label_key_size"
+                                app:boxCornerRadiusTopStart="12dp"
+                                app:boxCornerRadiusTopEnd="12dp"
+                                app:boxCornerRadiusBottomStart="12dp"
+                                app:boxCornerRadiusBottomEnd="12dp"
                                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                                 <com.google.android.material.textfield.TextInputEditText
@@ -440,6 +559,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="2048"
                                     android:inputType="number"
+                                    android:textSize="13sp"
                                     android:textColor="?attr/colorTextTitle" />
                             </com.google.android.material.textfield.TextInputLayout>
                         </LinearLayout>
@@ -451,6 +571,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:hint="@string/label_validity"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
                             style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                             <com.google.android.material.textfield.TextInputEditText
@@ -459,6 +583,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="25"
                                 android:inputType="number"
+                                android:textSize="13sp"
                                 android:textColor="?attr/colorTextTitle" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -469,6 +594,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:hint="@string/label_common_name"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
                             style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                             <com.google.android.material.textfield.TextInputEditText
@@ -476,6 +605,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Android Developer"
+                                android:textSize="13sp"
                                 android:textColor="?attr/colorTextTitle" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -486,6 +616,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:hint="@string/label_organization"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
                             style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                             <com.google.android.material.textfield.TextInputEditText
@@ -493,6 +627,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="GitKey"
+                                android:textSize="13sp"
                                 android:textColor="?attr/colorTextTitle" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -503,6 +638,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:hint="@string/label_org_unit"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
                             style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                             <com.google.android.material.textfield.TextInputEditText
@@ -510,6 +649,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Mobile"
+                                android:textSize="13sp"
                                 android:textColor="?attr/colorTextTitle" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -526,6 +666,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:hint="@string/label_city"
+                                app:boxCornerRadiusTopStart="12dp"
+                                app:boxCornerRadiusTopEnd="12dp"
+                                app:boxCornerRadiusBottomStart="12dp"
+                                app:boxCornerRadiusBottomEnd="12dp"
                                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                                 <com.google.android.material.textfield.TextInputEditText
@@ -533,6 +677,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="San Francisco"
+                                    android:textSize="13sp"
                                     android:textColor="?attr/colorTextTitle" />
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -543,6 +688,10 @@
                                 android:layout_weight="1"
                                 android:layout_marginStart="12dp"
                                 android:hint="@string/label_state"
+                                app:boxCornerRadiusTopStart="12dp"
+                                app:boxCornerRadiusTopEnd="12dp"
+                                app:boxCornerRadiusBottomStart="12dp"
+                                app:boxCornerRadiusBottomEnd="12dp"
                                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                                 <com.google.android.material.textfield.TextInputEditText
@@ -550,6 +699,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="CA"
+                                    android:textSize="13sp"
                                     android:textColor="?attr/colorTextTitle" />
                             </com.google.android.material.textfield.TextInputLayout>
                         </LinearLayout>
@@ -561,6 +711,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:hint="@string/label_country"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
                             style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                             <com.google.android.material.textfield.TextInputEditText
@@ -569,6 +723,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="US"
                                 android:maxLength="2"
+                                android:textSize="13sp"
                                 android:textColor="?attr/colorTextTitle" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -580,15 +735,17 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBuildKeystore"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="54dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/btn_build_keystore"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.02"
                 app:cornerRadius="16dp"
                 app:icon="@drawable/ic_shield"
                 app:iconGravity="textStart"
                 app:iconTint="#FFFFFF"
+                app:iconSize="20dp"
                 android:backgroundTint="?attr/colorPrimary"
                 android:textColor="#FFFFFF" />
 
@@ -600,7 +757,7 @@
         android:id="@+id/overlayProgress"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#99000000"
+        android:background="#B3090D16"
         android:clickable="true"
         android:focusable="true"
         android:visibility="gone">
@@ -609,8 +766,10 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="12dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="16dp"
+            app:strokeColor="?attr/colorCardStroke"
+            app:strokeWidth="1dp"
             app:cardBackgroundColor="?attr/colorCardBackground">
 
             <LinearLayout
@@ -618,23 +777,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:padding="28dp">
+                android:padding="32dp">
 
                 <ProgressBar
                     android:id="@+id/pbGeneration"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
                     android:indeterminateTint="?attr/colorPrimary" />
 
                 <TextView
                     android:id="@+id/tvProgressStage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:text="@string/stage_key_pair"
                     android:textSize="14sp"
-                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-bold"
                     android:textColor="?attr/colorTextTitle" />
 
                 <TextView
@@ -645,6 +804,7 @@
                     android:gravity="center"
                     android:text="Processing on device..."
                     android:textSize="12sp"
+                    android:fontFamily="sans-serif-medium"
                     android:textColor="?attr/colorTextMuted" />
 
             </LinearLayout>

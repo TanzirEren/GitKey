@@ -12,18 +12,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tools_title"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:fontFamily="sans-serif-black"
         android:textColor="?attr/colorTextTitle"
-        android:layout_marginTop="12dp" />
+        android:letterSpacing="-0.02"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:text="@string/tools_subtitle"
-        android:textSize="13sp"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif"
         android:textColor="?attr/colorTextMuted" />
+
+    <!-- Stitch Pill Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_badge_pill"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="12 DEV UTILITIES"
+            android:textSize="10sp"
+            android:fontFamily="sans-serif-bold"
+            android:textColor="?attr/colorPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_badge_pill"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="100% CLIENT-SIDE"
+            android:textSize="10sp"
+            android:fontFamily="sans-serif-bold"
+            android:textColor="?attr/colorTextMuted" />
+    </LinearLayout>
 
     <!-- Tools List -->
     <androidx.recyclerview.widget.RecyclerView
@@ -31,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         tools:listitem="@layout/item_tool_card" />
 
 </LinearLayout>

@@ -44,6 +44,14 @@ public class KeysFragment extends Fragment implements ProjectsAdapter.OnProjectA
         adapter = new ProjectsAdapter(requireContext(), this);
         rvAllProjects.setAdapter(adapter);
 
+        View btnEmptyCreate = view.findViewById(R.id.btnEmptyCreateKeyFromKeys);
+        if (btnEmptyCreate != null) {
+            btnEmptyCreate.setOnClickListener(v -> {
+                android.content.Intent intent = new android.content.Intent(requireActivity(), com.gitkey.build.ui.activity.CreateKeyActivity.class);
+                startActivity(intent);
+            });
+        }
+
         loadProjects();
     }
 
