@@ -1,0 +1,55 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="128dp"
+    android:viewportWidth="128"
+    android:viewportHeight="128">
+
+    <!-- Outer Hexagonal Security Badge / Vault Shield -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M64,6 L108,31 L108,81 L64,122 L20,81 L20,31 Z" />
+
+    <!-- Subtle Inner Shield Facet -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M64,14 L100,35 L100,77 L64,112 L28,77 L28,35 Z" />
+
+    <!-- Top Key Bow - Diamond Vault Ring -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M64,24 L82,42 L64,60 L46,42 Z" />
+
+    <!-- Key Core Aperture (Cutout inside Bow) -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M64,32 L74,42 L64,52 L54,42 Z" />
+
+    <!-- Central Key Shaft -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M61,56 L67,56 L67,98 L61,98 Z" />
+
+    <!-- Modern Cryptographic Bit Nodes (Right notches - Build & Sign Pins) -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M67,64 L80,64 L80,72 L67,72 Z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M67,78 L76,78 L76,86 L67,86 Z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M67,92 L82,92 L82,98 L67,98 Z" />
+
+    <!-- Left Circuit Verification Anchor -->
+    <path
+        android:fillColor="#818CF8"
+        android:pathData="M52,68 L61,68 L61,74 L52,74 Z" />
+    <path
+        android:fillColor="#818CF8"
+        android:pathData="M55,82 L61,82 L61,88 L55,88 Z" />
+
+    <!-- Digital Credential Star/Spark at Key Tip -->
+    <path
+        android:fillColor="#34D399"
+        android:pathData="M64,101 L66,106 L71,106 L67,109 L69,114 L64,111 L59,114 L61,109 L57,106 L62,106 Z" />
+</vector>

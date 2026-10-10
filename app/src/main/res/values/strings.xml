@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GitKey</string>
+    <string name="app_subtitle">Android Signing Key Manager</string>
+    <string name="app_tagline">Generate once. Sign anywhere.</string>
+    <string name="app_version">Version 1.0.0 (Build 1)</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_keys">Keys</string>
+    <string name="nav_tools">Tools</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Home Screen -->
+    <string name="home_welcome_title">Create a Signing Key</string>
+    <string name="home_welcome_desc">Generate an Android keystore and GitHub Actions signing secrets in a few steps.</string>
+    <string name="btn_create_new_key">Create New Key</string>
+    <string name="home_recent_title">Recent Projects</string>
+    <string name="home_view_all">View all</string>
+    <string name="home_empty_title">No Keystores Created Yet</string>
+    <string name="home_empty_desc">Tap the button above or the + button to generate your first signing key and GitHub secrets.</string>
+    <string name="feature_badge_offline">100% Offline &amp; Private</string>
+    <string name="feature_badge_standard">Android Gradle Compatible</string>
+    <string name="feature_badge_github">GitHub Actions Ready</string>
+
+    <!-- Create Key Screen -->
+    <string name="create_key_title">Create Signing Key</string>
+    <string name="create_key_subtitle">Enter your project information</string>
+    <string name="label_project_info">Project Information</string>
+    <string name="label_project_name">Project Name</string>
+    <string name="hint_project_name">e.g. MyApp or NovaPlayer</string>
+    <string name="label_keystore_filename">Default Keystore File</string>
+    <string name="label_app_logo">App Logo (Optional)</string>
+    <string name="btn_choose_logo">Choose App Logo</string>
+    <string name="btn_change_logo">Change Logo</string>
+    <string name="btn_remove_logo">Remove</string>
+    <string name="logo_privacy_note">Processed locally on device. Never uploaded.</string>
+    <string name="section_keystore_config">Keystore Configuration</string>
+    <string name="label_key_alias">Key Alias</string>
+    <string name="hint_key_alias">e.g. release_key</string>
+    <string name="label_keystore_password">Keystore Password</string>
+    <string name="label_key_password">Key Password</string>
+    <string name="btn_generate_password">Generate Secure</string>
+    <string name="check_same_password">Same password for Keystore and Key</string>
+    <string name="section_advanced_options">Advanced Options (Certificate &amp; Key)</string>
+    <string name="advanced_subtitle">Key algorithm, size, validity, and certificate identity</string>
+    <string name="label_algorithm">Key Algorithm</string>
+    <string name="label_key_size">Key Size</string>
+    <string name="label_validity">Validity (Years)</string>
+    <string name="label_common_name">Common Name (CN / Name)</string>
+    <string name="label_organization">Organization (O)</string>
+    <string name="label_org_unit">Organizational Unit (OU)</string>
+    <string name="label_city">City / Locality (L)</string>
+    <string name="label_state">State / Province (ST)</string>
+    <string name="label_country">Country Code (2 letters, e.g. US)</string>
+    <string name="btn_build_keystore">BUILD KEYSTORE</string>
+
+    <!-- Validation Errors -->
+    <string name="error_project_name_empty">Please enter a project name</string>
+    <string name="error_alias_empty">Key alias cannot be empty</string>
+    <string name="error_keystore_password_short">Keystore password must be at least 6 characters</string>
+    <string name="error_key_password_short">Key password must be at least 6 characters</string>
+    <string name="error_validity_invalid">Validity must be between 1 and 100 years</string>
+    <string name="error_generation_failed">Keystore generation failed: %s</string>
+
+    <!-- Generation Stages -->
+    <string name="stage_key_pair">Generating 2048-bit RSA key pair…</string>
+    <string name="stage_certificate">Creating self-signed X.509 certificate…</string>
+    <string name="stage_keystore">Packaging into Android signing keystore…</string>
+    <string name="stage_base64">Encoding keystore to standard Base64…</string>
+    <string name="stage_secrets">Preparing GitHub Actions Secrets…</string>
+    <string name="stage_complete">Keystore generated successfully!</string>
+
+    <!-- Result Screen -->
+    <string name="result_title">Keystore Ready</string>
+    <string name="result_subtitle">Your GitHub Actions signing credentials are ready.</string>
+    <string name="secret_keystore_base64">KEYSTORE_BASE64</string>
+    <string name="secret_keystore_password">KEYSTORE_PASSWORD</string>
+    <string name="secret_key_alias">KEY_ALIAS</string>
+    <string name="secret_key_password">KEY_PASSWORD</string>
+    <string name="btn_copy">Copy</string>
+    <string name="btn_show">Show</string>
+    <string name="btn_hide">Hide</string>
+    <string name="btn_copy_all">COPY ALL SECRETS</string>
+    <string name="btn_export_files">EXPORT FILES</string>
+    <string name="btn_github_guide">GITHUB ACTIONS SETUP</string>
+    <string name="card_fingerprints_title">Certificate Fingerprints</string>
+    <string name="label_sha256">SHA-256 Fingerprint</string>
+    <string name="label_sha1">SHA-1 Fingerprint</string>
+    <string name="label_md5">MD5 Fingerprint</string>
+
+    <!-- Export Dialog -->
+    <string name="export_dialog_title">Export Signing Files</string>
+    <string name="export_dialog_warning">WARNING: These files contain sensitive private signing credentials. Anyone with access to your keystore and passwords can sign applications as you. Keep them private and secure.</string>
+    <string name="export_jks_title">Save Keystore (.jks)</string>
+    <string name="export_jks_desc">The binary signing keystore file for local Gradle builds.</string>
+    <string name="export_secrets_title">Save Secrets (.env / .txt)</string>
+    <string name="export_secrets_desc">Text file with all 4 GitHub Actions secret variables.</string>
+    <string name="export_workflow_title">Save GitHub Actions Workflow (.yml)</string>
+    <string name="export_workflow_desc">Ready-to-use release signing workflow for your repo.</string>
+    <string name="export_info_title">Save Project Summary (.txt)</string>
+    <string name="export_info_desc">Project metadata, fingerprints, and alias details.</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- GitHub Actions Guide -->
+    <string name="guide_title">GitHub Actions Setup</string>
+    <string name="guide_step1_title">1. Add Secrets to GitHub</string>
+    <string name="guide_step1_desc">Go to your GitHub repo → Settings → Secrets and variables → Actions → New repository secret. Add the 4 secret values:</string>
+    <string name="guide_step2_title">2. Decode Keystore in Workflow</string>
+    <string name="guide_step2_desc">In your GitHub Actions workflow YAML, decode KEYSTORE_BASE64 back into a file before building:</string>
+    <string name="guide_step3_title">3. Sign in Gradle or Action</string>
+    <string name="guide_step3_desc">Configure your signingConfig in build.gradle or use the r0adkll/sign-android-release action.</string>
+    <string name="btn_copy_workflow">Copy Workflow Template</string>
+
+    <!-- Tools -->
+    <string name="tools_title">Developer Tools</string>
+    <string name="tools_subtitle">Offline utilities for signing, hashing, and encryption</string>
+    <string name="tool_keystore_gen_title">Keystore Generator</string>
+    <string name="tool_keystore_gen_desc">Create a new Android signing keystore and GitHub Secrets.</string>
+    <string name="tool_b64_enc_title">Base64 Encoder</string>
+    <string name="tool_b64_enc_desc">Encode any local file or text into standard Base64 string.</string>
+    <string name="tool_b64_dec_title">Base64 Decoder</string>
+    <string name="tool_b64_dec_desc">Decode Base64 string into file or plain text.</string>
+    <string name="tool_sha256_title">SHA-256 Generator</string>
+    <string name="tool_sha256_desc">Calculate 256-bit secure hash of any file or text input.</string>
+    <string name="tool_sha1_title">SHA-1 Generator</string>
+    <string name="tool_sha1_desc">Compute SHA-1 certificate or file fingerprint.</string>
+    <string name="tool_md5_title">MD5 Generator</string>
+    <string name="tool_md5_desc">Compute MD5 checksum for integrity verification.</string>
+    <string name="tool_inspector_title">Keystore Inspector</string>
+    <string name="tool_inspector_desc">Safely inspect aliases, certificates, validity and fingerprints from an existing keystore without exposing private keys.</string>
+    <string name="tool_secrets_fmt_title">GitHub Secrets Formatter</string>
+    <string name="tool_secrets_fmt_desc">Format separate signing variables into standard CI/CD secret syntax.</string>
+    <string name="tool_json_fmt_title">JSON Formatter</string>
+    <string name="tool_json_fmt_desc">Beautify or minify JSON files and strings locally.</string>
+    <string name="tool_checksum_title">Multi-File Checksum</string>
+    <string name="tool_checksum_desc">Generate MD5, SHA-1, and SHA-256 simultaneously for any file.</string>
+    <string name="tool_pwd_gen_title">Secure Password Generator</string>
+    <string name="tool_pwd_gen_desc">Generate cryptographically random passwords.</string>
+    <string name="tool_uuid_gen_title">UUID Generator</string>
+    <string name="tool_uuid_gen_desc">Generate standard version-4 cryptographic UUIDs.</string>
+
+    <!-- Keys Screen -->
+    <string name="keys_title">Saved Keystores</string>
+    <string name="keys_subtitle">Project metadata and signing fingerprints</string>
+    <string name="keys_empty_title">No Keys Saved</string>
+    <string name="keys_empty_desc">Generated keystore records will appear here.</string>
+    <string name="keys_security_notice">Sensitive passwords and private keys are never stored in plain text. Only safe project metadata is retained.</string>
+    <string name="btn_delete_record">Delete Record</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_subtitle">Preferences and Security</string>
+    <string name="pref_appearance_title">Appearance</string>
+    <string name="pref_theme_title">App Theme</string>
+    <string name="theme_system">System Default</string>
+    <string name="theme_light">Light Mode</string>
+    <string name="theme_dark">Dark Mode</string>
+    <string name="pref_security_title">Security</string>
+    <string name="pref_confirm_export_title">Require export confirmation</string>
+    <string name="pref_confirm_export_desc">Show warning dialog before exporting files with secrets</string>
+    <string name="pref_hide_secrets_title">Hide secrets by default</string>
+    <string name="pref_hide_secrets_desc">Mask passwords and base64 until tapped</string>
+    <string name="pref_storage_title">Storage &amp; Privacy</string>
+    <string name="pref_clear_history_title">Clear project history</string>
+    <string name="pref_clear_history_desc">Delete all saved project metadata and cached logos</string>
+    <string name="pref_about_title">About GitKey</string>
+    <string name="about_developer">GitKey is an open developer utility designed for modern Android CI/CD pipelines.</string>
+    <string name="about_license">Free &amp; Open Source</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GitKey" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Brand Colors in Dark Mode -->
+        <item name="colorPrimary">@color/brand_cyan</item>
+        <item name="colorOnPrimary">#090D16</item>
+        <item name="colorPrimaryContainer">#1E293B</item>
+        <item name="colorOnPrimaryContainer">#E0F2FE</item>
+
+        <item name="colorSecondary">#60A5FA</item>
+        <item name="colorOnSecondary">#090D16</item>
+
+        <item name="colorTertiary">#34D399</item>
+        <item name="colorOnTertiary">#090D16</item>
+
+        <item name="android:colorBackground">@color/bg_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/text_title_dark</item>
+
+        <!-- Custom Theme Attributes for Dark Mode -->
+        <item name="colorCardBackground">@color/card_bg_dark</item>
+        <item name="colorCardStroke">@color/card_stroke_dark</item>
+        <item name="colorCodeBlock">@color/code_block_bg_dark</item>
+        <item name="colorNavGlass">@color/nav_glass_bg_dark</item>
+        <item name="colorNavStroke">@color/nav_glass_stroke_dark</item>
+        <item name="colorTextTitle">@color/text_title_dark</item>
+        <item name="colorTextBody">@color/text_body_dark</item>
+        <item name="colorTextMuted">@color/text_muted_dark</item>
+
+        <!-- Status & Navigation Bars -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

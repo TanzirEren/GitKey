@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeColor="?attr/colorCardStroke"
+        app:strokeWidth="1dp"
+        app:cardBackgroundColor="?attr/colorCardBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select File for Multi-Checksum"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorTextTitle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSelectChecksumFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose File"
+                    app:icon="@drawable/ic_download"
+                    app:cornerRadius="10dp"
+                    style="@style/Widget.Material3.Button.TonalButton" />
+
+                <TextView
+                    android:id="@+id/tvChecksumFileName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="No file selected"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextMuted"
+                    android:singleLine="true"
+                    android:ellipsize="middle" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Multi Checksum Results Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardChecksumResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeColor="?attr/colorCardStroke"
+        app:strokeWidth="1dp"
+        app:cardBackgroundColor="?attr/colorCardBackground"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- SHA-256 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SHA-256"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCopySha256"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="Copy"
+                    android:textSize="10sp"
+                    app:cornerRadius="6dp"
+                    style="@style/Widget.Material3.Button.TextButton" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tvChecksumSha256"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/bg_code_box"
+                android:padding="8dp"
+                android:fontFamily="monospace"
+                android:textSize="11sp"
+                android:textColor="?attr/colorTextBody" />
+
+            <!-- SHA-1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SHA-1"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCopySha1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="Copy"
+                    android:textSize="10sp"
+                    app:cornerRadius="6dp"
+                    style="@style/Widget.Material3.Button.TextButton" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tvChecksumSha1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/bg_code_box"
+                android:padding="8dp"
+                android:fontFamily="monospace"
+                android:textSize="11sp"
+                android:textColor="?attr/colorTextBody" />
+
+            <!-- MD5 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MD5"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCopyMd5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="Copy"
+                    android:textSize="10sp"
+                    app:cornerRadius="6dp"
+                    style="@style/Widget.Material3.Button.TextButton" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tvChecksumMd5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/bg_code_box"
+                android:padding="8dp"
+                android:fontFamily="monospace"
+                android:textSize="11sp"
+                android:textColor="?attr/colorTextBody" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

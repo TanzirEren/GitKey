@@ -1,0 +1,6 @@
+{
+  "name": "GitKey",
+  "description": "Android Signing Key Manager and GitHub Actions Secrets Generator",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

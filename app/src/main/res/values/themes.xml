@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GitKey" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Brand Colors -->
+        <item name="colorPrimary">@color/brand_blue</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#DBEAFE</item>
+        <item name="colorOnPrimaryContainer">#1E3A8A</item>
+
+        <item name="colorSecondary">@color/brand_cyan</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+
+        <item name="colorTertiary">@color/brand_emerald</item>
+        <item name="colorOnTertiary">#FFFFFF</item>
+
+        <item name="android:colorBackground">@color/bg_light</item>
+        <item name="colorSurface">@color/surface_light</item>
+        <item name="colorOnSurface">@color/text_title_light</item>
+
+        <!-- Custom Theme Attributes for Light Mode -->
+        <item name="colorCardBackground">@color/card_bg_light</item>
+        <item name="colorCardStroke">@color/card_stroke_light</item>
+        <item name="colorCodeBlock">@color/code_block_bg_light</item>
+        <item name="colorNavGlass">@color/nav_glass_bg_light</item>
+        <item name="colorNavStroke">@color/nav_glass_stroke_light</item>
+        <item name="colorTextTitle">@color/text_title_light</item>
+        <item name="colorTextBody">@color/text_body_light</item>
+        <item name="colorTextMuted">@color/text_muted_light</item>
+
+        <!-- Status & Navigation Bars -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

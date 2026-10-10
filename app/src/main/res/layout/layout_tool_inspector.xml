@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeColor="?attr/colorCardStroke"
+        app:strokeWidth="1dp"
+        app:cardBackgroundColor="?attr/colorCardBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Existing Keystore"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorTextTitle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSelectInspectorFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose .jks / .p12"
+                    app:icon="@drawable/ic_download"
+                    app:cornerRadius="10dp"
+                    style="@style/Widget.Material3.Button.TonalButton" />
+
+                <TextView
+                    android:id="@+id/tvSelectedInspectorFile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="No keystore selected"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextMuted"
+                    android:singleLine="true"
+                    android:ellipsize="middle" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilInspectorPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Keystore Password (if encrypted)"
+                app:passwordToggleEnabled="true"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etInspectorPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="?attr/colorTextTitle" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnInspectKeystore"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:text="INSPECT KEYSTORE"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Inspection Output Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardInspectorResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeColor="?attr/colorCardStroke"
+        app:strokeWidth="1dp"
+        app:cardBackgroundColor="?attr/colorCardBackground"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KEYSTORE METADATA"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvInspectorOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_code_box"
+                android:padding="12dp"
+                android:fontFamily="monospace"
+                android:textSize="11sp"
+                android:textColor="?attr/colorTextBody"
+                tools:text="Format: PKCS12\nAlias: upload\n..." />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCopyInspection"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="12dp"
+                android:text="Copy Metadata"
+                app:icon="@drawable/ic_copy"
+                app:cornerRadius="10dp"
+                style="@style/Widget.Material3.Button.TonalButton" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

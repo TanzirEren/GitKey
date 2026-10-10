@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainCoordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Primary Fragment Host -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="88dp" />
+
+    <!-- Main Floating Action Button (FAB) -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabCreateKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="98dp"
+        android:text="@string/btn_create_new_key"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_add"
+        app:iconTint="#FFFFFF"
+        app:backgroundTint="?attr/colorPrimary"
+        app:elevation="6dp"
+        app:cornerRadius="28dp"
+        android:contentDescription="@string/btn_create_new_key" />
+
+    <!-- Modern Glass Floating Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/glassBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_glass_nav"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <!-- Tab 1: Home -->
+        <LinearLayout
+            android:id="@+id/tabHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless">
+
+            <ImageView
+                android:id="@+id/ivTabHome"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home"
+                app:tint="?attr/colorPrimary"
+                android:contentDescription="@string/nav_home" />
+
+            <TextView
+                android:id="@+id/tvTabHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/nav_home"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary" />
+        </LinearLayout>
+
+        <!-- Tab 2: Keys -->
+        <LinearLayout
+            android:id="@+id/tabKeys"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless">
+
+            <ImageView
+                android:id="@+id/ivTabKeys"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_key"
+                app:tint="?attr/colorTextMuted"
+                android:contentDescription="@string/nav_keys" />
+
+            <TextView
+                android:id="@+id/tvTabKeys"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/nav_keys"
+                android:textSize="11sp"
+                android:textColor="?attr/colorTextMuted" />
+        </LinearLayout>
+
+        <!-- Tab 3: Tools -->
+        <LinearLayout
+            android:id="@+id/tabTools"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless">
+
+            <ImageView
+                android:id="@+id/ivTabTools"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_tools"
+                app:tint="?attr/colorTextMuted"
+                android:contentDescription="@string/nav_tools" />
+
+            <TextView
+                android:id="@+id/tvTabTools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/nav_tools"
+                android:textSize="11sp"
+                android:textColor="?attr/colorTextMuted" />
+        </LinearLayout>
+
+        <!-- Tab 4: Settings -->
+        <LinearLayout
+            android:id="@+id/tabSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless">
+
+            <ImageView
+                android:id="@+id/ivTabSettings"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_settings"
+                app:tint="?attr/colorTextMuted"
+                android:contentDescription="@string/nav_settings" />
+
+            <TextView
+                android:id="@+id/tvTabSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/nav_settings"
+                android:textSize="11sp"
+                android:textColor="?attr/colorTextMuted" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

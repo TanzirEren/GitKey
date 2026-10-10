@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="28" fill="#0B0F19"/>
+  <!-- Outer Hexagonal Security Badge / Vault Shield -->
+  <path fill="#1E293B" d="M64,12 L104,35 L104,80 L64,116 L24,80 L24,35 Z"/>
+  <!-- Subtle Inner Shield Facet -->
+  <path fill="#0F172A" d="M64,19 L97,38 L97,77 L64,107 L31,77 L31,38 Z"/>
+  <!-- Top Key Bow - Diamond Vault Ring -->
+  <path fill="#38BDF8" d="M64,28 L80,44 L64,60 L48,44 Z"/>
+  <!-- Key Core Aperture -->
+  <path fill="#0F172A" d="M64,35 L73,44 L64,53 L55,44 Z"/>
+  <!-- Central Key Shaft -->
+  <path fill="#38BDF8" d="M61,56 L67,56 L67,96 L61,96 Z"/>
+  <!-- Modern Cryptographic Bit Nodes -->
+  <path fill="#38BDF8" d="M67,64 L79,64 L79,71 L67,71 Z"/>
+  <path fill="#38BDF8" d="M67,77 L76,77 L76,84 L67,84 Z"/>
+  <path fill="#38BDF8" d="M67,90 L81,90 L81,96 L67,96 Z"/>
+  <!-- Left Circuit Verification Anchor -->
+  <path fill="#818CF8" d="M53,68 L61,68 L61,74 L53,74 Z"/>
+  <path fill="#818CF8" d="M56,81 L61,81 L61,87 L56,87 Z"/>
+  <!-- Digital Credential Star -->
+  <polygon fill="#34D399" points="64,99 66,104 71,104 67,107 69,112 64,109 59,112 61,107 57,104 62,104"/>
+</svg>
