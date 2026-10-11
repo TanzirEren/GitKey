@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 220" width="1000" height="220" role="img" aria-label="Workflow: Generate keystore, Export secrets, Sign in CI">
+  <defs>
+    <linearGradient id="ln" gradientUnits="userSpaceOnUse" x1="170" y1="0" x2="830" y2="0">
+      <stop offset="0" stop-color="#3DDC84"/><stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <style>
+    .t{font-family:'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif;fill:#e2e8f0}
+    .m{font-family:'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace;fill:#94a3b8;font-size:13px}
+    .node{animation:pulse 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+    .dash{stroke-dasharray:8 8;animation:flow 1.2s linear infinite}
+    @keyframes flow{to{stroke-dashoffset:-16}}
+  </style>
+  <rect width="1000" height="220" rx="20" fill="#0b1224"/>
+  <path d="M284 110H386M614 110H716" fill="none" stroke="url(#ln)" stroke-width="3" class="dash" opacity=".9"/>
+  <path id="route" d="M170 110H500H830" fill="none" stroke="none"/>
+
+  <g class="node">
+    <rect x="60" y="50" width="220" height="120" rx="22" fill="#3DDC84" fill-opacity=".1" stroke="#3DDC84" stroke-opacity=".6" stroke-width="2"/>
+    <text x="170" y="95" text-anchor="middle" font-size="34">🔑</text>
+    <text x="170" y="128" text-anchor="middle" class="t" font-size="20" font-weight="700">1 · Generate</text>
+    <text x="170" y="150" text-anchor="middle" class="m">.jks keystore, on-device</text>
+  </g>
+  <g class="node" style="animation-delay:1s">
+    <rect x="390" y="50" width="220" height="120" rx="22" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".6" stroke-width="2"/>
+    <text x="500" y="95" text-anchor="middle" font-size="34">📦</text>
+    <text x="500" y="128" text-anchor="middle" class="t" font-size="20" font-weight="700">2 · Export</text>
+    <text x="500" y="150" text-anchor="middle" class="m">Base64 · .env · workflow</text>
+  </g>
+  <g class="node" style="animation-delay:2s">
+    <rect x="720" y="50" width="220" height="120" rx="22" fill="#a78bfa" fill-opacity=".1" stroke="#a78bfa" stroke-opacity=".6" stroke-width="2"/>
+    <text x="830" y="95" text-anchor="middle" font-size="34">🚀</text>
+    <text x="830" y="128" text-anchor="middle" class="t" font-size="20" font-weight="700">3 · Sign in CI</text>
+    <text x="830" y="150" text-anchor="middle" class="m">GitHub Actions secrets</text>
+  </g>
+
+  <circle r="7" fill="#fff" filter="url(#glow)">
+    <animateMotion dur="3.6s" repeatCount="indefinite"><mpath href="#route"/></animateMotion>
+  </circle>
+</svg>
