@@ -2,7 +2,7 @@
 
 <img src="assets/banner.svg" alt="GitKey - Generate once. Sign anywhere." width="100%"/>
 
-<a href="https://github.com/YOUR_USERNAME/GitKey">
+<a href="https://github.com/TanzirEren/GitKey">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=1200&color=3DDC84&center=true&vCenter=true&width=760&height=48&lines=Offline+Android+keystore+generator;Signing+key+manager+%26+vault;GitHub+Actions+secrets+toolkit;No+internet.+No+telemetry.+Just+keys." alt="Typing animation"/>
 </a>
 
@@ -17,10 +17,10 @@
 [![Design](https://img.shields.io/badge/Design-Google%20Stitch%20%2F%20M3-8B5CF6?style=for-the-badge)](https://m3.material.io/)
 [![License](https://img.shields.io/badge/License-MIT-F472B6?style=for-the-badge)](LICENSE)
 
-[![Build APK](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/GitKey/build-apk.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Build%20APK)](https://github.com/YOUR_USERNAME/GitKey/actions)
-[![Latest Release](https://img.shields.io/github/v/release/YOUR_USERNAME/GitKey?style=for-the-badge&logo=github&label=Release&color=3DDC84)](https://github.com/YOUR_USERNAME/GitKey/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/YOUR_USERNAME/GitKey/total?style=for-the-badge&logo=android&color=38BDF8)](https://github.com/YOUR_USERNAME/GitKey/releases)
-[![Stars](https://img.shields.io/github/stars/YOUR_USERNAME/GitKey?style=for-the-badge&logo=github&color=FBBF24)](https://github.com/YOUR_USERNAME/GitKey/stargazers)
+[![Build APK](https://img.shields.io/github/actions/workflow/status/TanzirEren/GitKey/build-apk.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Build%20APK)](https://github.com/TanzirEren/GitKey/actions)
+[![Latest Release](https://img.shields.io/github/v/release/TanzirEren/GitKey?style=for-the-badge&logo=github&label=Release&color=3DDC84)](https://github.com/TanzirEren/GitKey/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/TanzirEren/GitKey/total?style=for-the-badge&logo=android&color=38BDF8)](https://github.com/TanzirEren/GitKey/releases)
+[![Stars](https://img.shields.io/github/stars/TanzirEren/GitKey?style=for-the-badge&logo=github&color=FBBF24)](https://github.com/TanzirEren/GitKey/stargazers)
 
 <br/>
 
@@ -136,7 +136,7 @@ GitKey v2 brings a full **Google Stitch** redesign (porcelain light theme, obsid
 ## 📥 Download & Install
 
 **Option A: Releases (recommended)**
-1. Open the [**Releases**](https://github.com/YOUR_USERNAME/GitKey/releases/latest) page.
+1. Open the [**Releases**](https://github.com/TanzirEren/GitKey/releases/latest) page.
 2. Download the latest `.apk`.
 3. On your phone allow *Install unknown apps* for your browser or file manager, then open the APK.
 
@@ -278,7 +278,7 @@ GitKey/
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/GitKey.git
+git clone https://github.com/TanzirEren/GitKey.git
 cd GitKey
 
 # Debug APK
