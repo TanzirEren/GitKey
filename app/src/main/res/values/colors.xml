@@ -24,6 +24,8 @@
     <color name="text_title_light">#0F172A</color>
     <color name="text_body_light">#334155</color>
     <color name="text_muted_light">#64748B</color>
+    <color name="text_secondary_light">#64748B</color>
+    <color name="text_tertiary_light">#94A3B8</color>
     <color name="code_block_bg_light">#F8FAFC</color>
     <color name="code_text_light">#1E293B</color>
     <color name="pill_bg_light">#F1F5F9</color>

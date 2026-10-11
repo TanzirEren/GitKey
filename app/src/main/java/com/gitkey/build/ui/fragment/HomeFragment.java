@@ -93,16 +93,10 @@ public class HomeFragment extends Fragment implements ProjectsAdapter.OnProjectA
 
     @Override
     public void onProjectClick(ProjectRecord record) {
-        // Show summary dialog
-        new AlertDialog.Builder(requireContext())
-                .setTitle(record.getProjectName())
-                .setMessage("Keystore: " + record.getFileName() + "\n" +
-                        "Alias: " + record.getAlias() + "\n" +
-                        "Algorithm: " + record.getKeyAlgorithm() + "\n\n" +
-                        "SHA-256 Fingerprint:\n" + record.getSha256Fingerprint() + "\n\n" +
-                        "SHA-1 Fingerprint:\n" + record.getSha1Fingerprint())
-                .setPositiveButton("Close", null)
-                .show();
+        Intent intent = new Intent(requireContext(), com.gitkey.build.ui.activity.ProjectDetailActivity.class);
+        intent.putExtra("project_id", record.getId());
+        intent.putExtra("project_record", record);
+        startActivity(intent);
     }
 
     @Override

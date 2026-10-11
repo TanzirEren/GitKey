@@ -2,11 +2,15 @@ package com.gitkey.build.storage;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Base64;
 
 import com.gitkey.build.model.GeneratedSecrets;
 
+import java.io.ByteArrayInputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+import java.security.KeyStore;
+import java.security.cert.Certificate;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -65,6 +69,122 @@ public class FileExportHelper {
                 "      with:\n" +
                 "        name: " + cleanName + "-Release\n" +
                 "        path: app/build/outputs/apk/release/*.apk\n";
+    }
+
+    public static String generateGradleKotlinSnippet(String fileName, String alias) {
+        String cleanFile = fileName != null ? fileName : "release-key.jks";
+        String cleanAlias = alias != null ? alias : "release_key";
+        return "// Android build.gradle.kts (Kotlin DSL)\n" +
+                "android {\n" +
+                "    signingConfigs {\n" +
+                "        create(\"release\") {\n" +
+                "            val keystorePath = System.getenv(\"SIGNING_KEYSTORE_PATH\") ?: \"app/" + cleanFile + "\"\n" +
+                "            storeFile = file(keystorePath)\n" +
+                "            storePassword = System.getenv(\"SIGNING_KEYSTORE_PASSWORD\")\n" +
+                "            keyAlias = System.getenv(\"SIGNING_KEY_ALIAS\") ?: \"" + cleanAlias + "\"\n" +
+                "            keyPassword = System.getenv(\"SIGNING_KEY_PASSWORD\")\n" +
+                "        }\n" +
+                "    }\n" +
+                "    buildTypes {\n" +
+                "        release {\n" +
+                "            signingConfig = signingConfigs.getByName(\"release\")\n" +
+                "        }\n" +
+                "    }\n" +
+                "}\n";
+    }
+
+    public static String generateGradleGroovySnippet(String fileName, String alias) {
+        String cleanFile = fileName != null ? fileName : "release-key.jks";
+        String cleanAlias = alias != null ? alias : "release_key";
+        return "// Android build.gradle (Groovy DSL)\n" +
+                "android {\n" +
+                "    signingConfigs {\n" +
+                "        release {\n" +
+                "            storeFile file(System.getenv(\"SIGNING_KEYSTORE_PATH\") ?: \"" + cleanFile + "\")\n" +
+                "            storePassword System.getenv(\"SIGNING_KEYSTORE_PASSWORD\")\n" +
+                "            keyAlias System.getenv(\"SIGNING_KEY_ALIAS\") ?: \"" + cleanAlias + "\"\n" +
+                "            keyPassword System.getenv(\"SIGNING_KEY_PASSWORD\")\n" +
+                "        }\n" +
+                "    }\n" +
+                "    buildTypes {\n" +
+                "        release {\n" +
+                "            signingConfig signingConfigs.release\n" +
+                "        }\n" +
+                "    }\n" +
+                "}\n";
+    }
+
+    public static String generateGhCliCommands(String base64, String alias) {
+        String cleanAlias = alias != null ? alias : "release_key";
+        String b64Val = base64 != null ? base64 : "<YOUR_KEYSTORE_BASE64>";
+        return "# Run in your Git terminal with GitHub CLI (gh) installed:\n" +
+                "gh secret set KEYSTORE_BASE64 -b \"" + b64Val + "\"\n" +
+                "gh secret set KEY_ALIAS -b \"" + cleanAlias + "\"\n" +
+                "gh secret set KEYSTORE_PASSWORD -b \"<YOUR_KEYSTORE_PASSWORD>\"\n" +
+                "gh secret set KEY_PASSWORD -b \"<YOUR_KEY_PASSWORD>\"\n";
+    }
+
+    public static String generateFastlaneSnippet(String fileName, String alias) {
+        String cleanFile = fileName != null ? fileName : "release-key.jks";
+        String cleanAlias = alias != null ? alias : "release_key";
+        return "# Fastlane Appfile / Fastfile snippet\n" +
+                "lane :build_signed_apk do\n" +
+                "  gradle(\n" +
+                "    task: 'assembleRelease',\n" +
+                "    properties: {\n" +
+                "      'android.injected.signing.store.file' => '" + cleanFile + "',\n" +
+                "      'android.injected.signing.store.password' => ENV['SIGNING_KEYSTORE_PASSWORD'],\n" +
+                "      'android.injected.signing.key.alias' => '" + cleanAlias + "',\n" +
+                "      'android.injected.signing.key.password' => ENV['SIGNING_KEY_PASSWORD']\n" +
+                "    }\n" +
+                "  )\n" +
+                "end\n";
+    }
+
+    public static String generateEnvFile(String base64, String alias) {
+        return "# GitKey Generated Environment Secrets\n" +
+                "KEYSTORE_BASE64=" + (base64 != null ? base64 : "") + "\n" +
+                "KEY_ALIAS=" + (alias != null ? alias : "release_key") + "\n" +
+                "KEYSTORE_PASSWORD=\n" +
+                "KEY_PASSWORD=\n";
+    }
+
+    public static String extractCertPemFromKeystoreBytes(byte[] jksBytes, String password, String alias) {
+        try {
+            KeyStore ks = KeyStore.getInstance("PKCS12");
+            char[] pass = (password != null) ? password.toCharArray() : "".toCharArray();
+            try {
+                ks.load(new ByteArrayInputStream(jksBytes), pass);
+            } catch (Exception tryEmpty) {
+                // Try null or empty password fallback
+                ks.load(new ByteArrayInputStream(jksBytes), null);
+            }
+            Certificate cert = null;
+            if (alias != null && ks.containsAlias(alias)) {
+                cert = ks.getCertificate(alias);
+            } else if (ks.aliases().hasMoreElements()) {
+                cert = ks.getCertificate(ks.aliases().nextElement());
+            }
+            if (cert != null) {
+                return convertCertToPem(cert);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String convertCertToPem(Certificate cert) throws Exception {
+        byte[] encoded = cert.getEncoded();
+        String base64 = Base64.encodeToString(encoded, Base64.NO_WRAP);
+        StringBuilder sb = new StringBuilder();
+        sb.append("-----BEGIN CERTIFICATE-----\n");
+        for (int i = 0; i < base64.length(); i += 64) {
+            int end = Math.min(i + 64, base64.length());
+            sb.append(base64, i, end).append("\n");
+        }
+        sb.append("-----END CERTIFICATE-----\n");
+        return sb.toString();
     }
 
     public static String generateProjectSummary(GeneratedSecrets secrets) {

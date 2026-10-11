@@ -8,69 +8,148 @@
     android:padding="20dp">
 
     <!-- Stitch Header -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/keys_title"
-        android:textSize="22sp"
-        android:fontFamily="sans-serif-black"
-        android:textColor="?attr/colorTextTitle"
-        android:letterSpacing="-0.02"
-        android:layout_marginTop="8dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="@string/keys_subtitle"
-        android:textSize="12sp"
-        android:fontFamily="sans-serif"
-        android:textColor="?attr/colorTextMuted" />
-
-    <!-- Security Info Card -->
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="14dp"
-        app:cardElevation="0dp"
-        app:strokeColor="?attr/colorCardStroke"
-        app:strokeWidth="1dp"
-        app:cardBackgroundColor="?attr/colorCardBackground">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:gravity="center_vertical">
-
-            <FrameLayout
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:background="@drawable/bg_badge_pill">
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_shield"
-                    app:tint="?attr/colorPrimary"
-                    android:contentDescription="@null" />
-            </FrameLayout>
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="12dp"
-                android:text="@string/keys_security_notice"
-                android:textSize="11sp"
+                android:text="@string/keys_title"
+                android:textSize="22sp"
+                android:fontFamily="sans-serif-black"
+                android:textColor="?attr/colorTextTitle"
+                android:letterSpacing="-0.02" />
+
+            <TextView
+                android:id="@+id/tvKeysSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/keys_subtitle"
+                android:textSize="12sp"
                 android:fontFamily="sans-serif"
-                android:textColor="?attr/colorTextBody"
-                android:lineSpacingExtra="2dp" />
+                android:textColor="?attr/colorTextMuted" />
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateKeyTop"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="New Key"
+            android:textSize="11sp"
+            android:fontFamily="sans-serif-bold"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/ic_add"
+            app:iconSize="13dp"
+            style="@style/Widget.Material3.Button.TonalButton" />
+    </LinearLayout>
+
+    <!-- Search Box -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_code_box_stitch"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_search"
+            app:tint="?attr/colorTextMuted"
+            android:contentDescription="Search" />
+
+        <EditText
+            android:id="@+id/etSearchProjects"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:hint="Search projects, aliases, tags or fingerprints..."
+            android:textSize="13sp"
+            android:fontFamily="sans-serif"
+            android:textColor="?attr/colorTextTitle"
+            android:textColorHint="?attr/colorTextMuted"
+            android:inputType="text"
+            android:imeOptions="actionSearch" />
+    </LinearLayout>
+
+    <!-- Filter chips -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/chipFilterAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge_pill"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:text="All Keys"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="?attr/colorPrimary" />
+
+            <TextView
+                android:id="@+id/chipFilterStarred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_badge_pill"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:text="★ Starred"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="?attr/colorTextMuted" />
+
+            <TextView
+                android:id="@+id/chipFilterActive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_badge_pill"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:text="Active"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="?attr/colorTextMuted" />
+
+            <TextView
+                android:id="@+id/chipFilterExpired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_badge_pill"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:text="Expired"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="?attr/colorTextMuted" />
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <!-- Projects List -->
     <androidx.recyclerview.widget.RecyclerView
@@ -78,7 +157,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         tools:listitem="@layout/item_project_card" />
 
     <!-- Empty State -->

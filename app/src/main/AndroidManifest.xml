@@ -45,6 +45,18 @@
             android:label="@string/tools_title"
             android:windowSoftInputMode="adjustResize" />
 
+        <activity
+            android:name=".ui.activity.ProjectDetailActivity"
+            android:exported="false"
+            android:label="Project Details"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.activity.EditProjectActivity"
+            android:exported="false"
+            android:label="Edit Project"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>

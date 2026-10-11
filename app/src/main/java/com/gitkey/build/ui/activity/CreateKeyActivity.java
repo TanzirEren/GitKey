@@ -86,6 +86,29 @@ public class CreateKeyActivity extends AppCompatActivity {
         initViews();
         setupListeners();
         setDefaultPasswords();
+        checkForCloneIntent();
+    }
+
+    private void checkForCloneIntent() {
+        if (getIntent().hasExtra("clone_project")) {
+            ProjectRecord clone = (ProjectRecord) getIntent().getSerializableExtra("clone_project");
+            if (clone != null) {
+                etProjectName.setText(clone.getProjectName() + " Copy");
+                etKeyAlias.setText(clone.getAlias() != null ? clone.getAlias() + "_v2" : "release_key");
+                if (clone.getCommonName() != null && !clone.getCommonName().isEmpty()) {
+                    etCommonName.setText(clone.getCommonName());
+                }
+                if (clone.getOrganization() != null && !clone.getOrganization().isEmpty()) {
+                    etOrganization.setText(clone.getOrganization());
+                }
+                if (clone.getCountry() != null && !clone.getCountry().isEmpty()) {
+                    etCountry.setText(clone.getCountry());
+                }
+                if (clone.getValidityYears() > 0) {
+                    etValidity.setText(String.valueOf(clone.getValidityYears()));
+                }
+            }
+        }
     }
 
     private void initViews() {
@@ -311,8 +334,9 @@ public class CreateKeyActivity extends AppCompatActivity {
 
                 // Save safe project metadata to repository
                 ProjectRepository repo = new ProjectRepository(CreateKeyActivity.this);
+                String recordId = UUID.randomUUID().toString();
                 ProjectRecord record = new ProjectRecord(
-                        UUID.randomUUID().toString(),
+                        recordId,
                         config.getProjectName(),
                         config.getAlias(),
                         config.getKeystoreFileName(),
@@ -322,6 +346,19 @@ public class CreateKeyActivity extends AppCompatActivity {
                         secrets.getSha1Fingerprint(),
                         selectedLogoUri != null ? selectedLogoUri.toString() : null
                 );
+                record.setCommonName(config.getCommonName());
+                record.setOrganization(config.getOrganization());
+                record.setCountry(config.getCountry());
+                record.setValidityYears(config.getValidityYears());
+                record.setMd5Fingerprint(secrets.getMd5Fingerprint());
+                record.setKeystoreBase64(secrets.getKeystoreBase64());
+                record.setTag("Release");
+
+                // Save keystore bytes in internal vault so user can redownload anytime!
+                if (secrets.getKeystoreBytes() != null) {
+                    repo.saveKeystoreFile(recordId, secrets.getKeystoreBytes());
+                }
+
                 repo.saveProject(record);
 
                 mainHandler.post(() -> {
